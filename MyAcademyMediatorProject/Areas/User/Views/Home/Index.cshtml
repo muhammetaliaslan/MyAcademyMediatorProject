@@ -1,0 +1,179 @@
+﻿@using MyAcademyMediatorProject.Models
+@model HomeIndexViewModel
+
+@{
+    Layout = "~/Areas/User/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Slider Section -->
+<section id="slider">
+    @if (Model.Sliders != null && Model.Sliders.Any())
+    {
+        <div id="homeCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                @foreach (var slide in Model.Sliders)
+                {
+                    <div class="carousel-item @(slide == Model.Sliders.First() ? "active" : "")">
+                        <img src="@Url.Content("~/bagery/assets/images/banner/" + (slide.ImageUrl ?? "banner-1.jpg"))"
+                             class="d-block w-100"
+                             alt="@slide.Title"
+                             onerror="this.src='@Url.Content("~/bagery/assets/images/banner/banner-1.jpg")'" />
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>@slide.Title</h5>
+                            <p>@slide.Subtitle</p>
+                        </div>
+                    </div>
+                }
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#homeCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#homeCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+    }
+    else
+    {
+        <p class="text-center text-danger">⚠️ Slider verisi bulunamadı.</p>
+    }
+</section>
+
+<!-- Services Section -->
+<section id="services" class="py-5 bg-light">
+    <div class="container text-center">
+        <h2 class="mb-4">Our Services</h2>
+        <div class="row">
+            <div class="col-md-4 text-center">
+                <img src="@Url.Content("~/bagery/assets/images/icons/anim-icon-1.png")" alt="Fast Delivery" class="mb-3" />
+                <h5>Fast Delivery</h5>
+                <p>We deliver your favorite bakery products quickly and safely.</p>
+            </div>
+            <div class="col-md-4 text-center">
+                <img src="@Url.Content("~/bagery/assets/images/icons/anim-icon-2.png")" alt="Quality Ingredients" class="mb-3" />
+                <h5>Quality Ingredients</h5>
+                <p>Our products are made with the finest ingredients and care.</p>
+            </div>
+            <div class="col-md-4 text-center">
+                <img src="@Url.Content("~/bagery/assets/images/icons/anim-icon-3.png")" alt="Customer Support" class="mb-3" />
+                <h5>Customer Support</h5>
+                <p>24/7 support to ensure you have the best experience with us.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Campaigns / Promotions Section -->
+<section id="promotion" class="py-5">
+    <div class="container text-center">
+        <h2 class="mb-4">Promotions</h2>
+        <div class="row">
+            @if (Model.Campaigns != null && Model.Campaigns.Any())
+            {
+                @foreach (var campaign in Model.Campaigns)
+                {
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100">
+                            <img src="@Url.Content("~/bagery/assets/images/resource/shop/" + (campaign.ImageUrl ?? "default.jpg"))"
+                                 class="card-img-top"
+                                 alt="@campaign.Name"
+                                 onerror="this.src='@Url.Content("~/bagery/assets/images/resource/shop/default.jpg")'" />
+                            <div class="card-body text-center">
+                                <h5 class="card-title">@campaign.Name</h5>
+                                <p class="card-text">@campaign.Description</p>
+                                <p class="card-text"><strong>Discount:</strong> @campaign.Discount%</p>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+            else
+            {
+                <p class="text-muted">Henüz kampanya bulunmamaktadır.</p>
+            }
+        </div>
+    </div>
+</section>
+
+<!-- Our Shop Section -->
+<section id="shop" class="py-5 bg-light">
+    <div class="container text-center">
+        <h2 class="mb-4">Our Shop</h2>
+        <div class="row">
+            @if (Model.Products != null && Model.Products.Any())
+            {
+                @foreach (var product in Model.Products)
+                {
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                        <div class="card h-100">
+                            <img src="@Url.Content("~/bagery/assets/images/resource/shop/" + (product.ImageUrl ?? "default.jpg"))"
+                                 class="card-img-top"
+                                 alt="@product.Name"
+                                 onerror="this.src='@Url.Content("~/bagery/assets/images/resource/shop/default.jpg")'" />
+                            <div class="card-body text-center">
+                                <h5 class="card-title">@product.Name</h5>
+                                <p class="card-text">@product.Price.ToString("C")</p>
+                                <a href="#" class="btn btn-primary">Add to Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+            else
+            {
+                <p class="text-muted">Henüz ürün bulunmamaktadır.</p>
+            }
+        </div>
+    </div>
+</section>
+
+<!-- Gallery Section -->
+<section id="gallery" class="py-5">
+    <div class="container text-center">
+        <h2 class="mb-4">Photo Gallery</h2>
+        <div class="row">
+            @if (Model.Gallery != null && Model.Gallery.Any())
+            {
+                @foreach (var item in Model.Gallery)
+                {
+                    <div class="col-md-4 mb-4">
+                        <img src="@Url.Content("~/bagery/assets/images/gallery/" + (item.ImageUrl ?? "default.jpg"))"
+                             class="img-fluid"
+                             alt="@item.AltText"
+                             onerror="this.src='@Url.Content("~/bagery/assets/images/gallery/default.jpg")'" />
+                    </div>
+                }
+            }
+            else
+            {
+                <p class="text-muted">Galeri boş.</p>
+            }
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials Section -->
+<section id="testimonial" class="py-5 bg-light">
+    <div class="container text-center">
+        <h2 class="mb-4">Testimonials</h2>
+        <div class="row">
+            @if (Model.Testimonials != null && Model.Testimonials.Any())
+            {
+                @foreach (var t in Model.Testimonials)
+                {
+                    <div class="col-md-4 mb-4">
+                        <div class="testimonial-card p-3 border rounded">
+                            <img src="@Url.Content("~/bagery/assets/images/resource/" + (t.ImageUrl ?? "default.jpg"))"
+                                 class="mb-3 rounded-circle"
+                                 width="80"
+                                 alt="@t.Name"
+                                 onerror="this.src='@Url.Content("~/bagery/assets/images/resource/default.jpg")'" />
+                            <p>"@t.Content"</p>
+                            <h6>- @t.Name</h6>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</section>

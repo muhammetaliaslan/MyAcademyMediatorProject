@@ -1,0 +1,18 @@
+﻿
+@model CreateOrderCommand
+@{
+    ViewData["Title"] = "Yeni Sipariş";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Yeni Sipariş Oluştur</h2>
+
+<form method="post">
+    <label>Müşteri Adı</label>
+    <input asp-for="CustomerName" class="form-control" />
+    <br />
+    <label>Sipariş Tarihi</label>
+    <input asp-for="OrderDate" type="date" class="form-control" />
+    <br />
+    <button class="btn btn-dark">Kaydet</button>
+</form>

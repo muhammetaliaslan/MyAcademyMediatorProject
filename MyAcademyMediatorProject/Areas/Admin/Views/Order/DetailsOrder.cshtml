@@ -1,0 +1,42 @@
+﻿@model GetOrderByIdQueryResult
+@{
+    ViewData["Title"] = "Sipariş Detayı";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Sipariş Detayı</h1>
+
+<div class="mb-3">
+    <strong>Müşteri:</strong> @Model.CustomerName
+</div>
+<div class="mb-3">
+    <strong>Email:</strong> @Model.CustomerEmail
+</div>
+<div class="mb-3">
+    <strong>Tarih:</strong> @Model.OrderDate.ToString("dd/MM/yyyy")
+</div>
+
+<h3>Ürünler</h3>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Ürün Adı</th>
+            <th>Miktar</th>
+            <th>Birim Fiyat</th>
+            <th>Toplam</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Items)
+        {
+            <tr>
+                <td>@item.ProductName</td>
+                <td>@item.Quantity</td>
+                <td>@item.UnitPrice.ToString("C")</td>
+                <td>@(item.Quantity * item.UnitPrice).ToString("C")</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a href="/Admin/Order/Index" class="btn btn-secondary mt-3">Geri</a>

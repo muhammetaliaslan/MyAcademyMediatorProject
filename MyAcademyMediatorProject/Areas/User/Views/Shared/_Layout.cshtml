@@ -1,0 +1,69 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bagery Bakery</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="@Url.Content("~/bagery/assets/images/favicon.ico")" />
+
+    <!-- Bagery CSS -->
+    <link rel="stylesheet" href="@Url.Content("~/bagery/assets/css/bootstrap.css")" />
+    <link rel="stylesheet" href="@Url.Content("~/bagery/assets/css/font-awesome-all.css")" />
+    <link rel="stylesheet" href="@Url.Content("~/bagery/assets/css/style.css")" />
+    <link rel="stylesheet" href="@Url.Content("~/bagery/assets/css/responsive.css")" />
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header class="main-header">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg">
+                <a class="navbar-brand" href="@Url.Action("Index", "Home", new { area = "User" })">
+                    <img src="@Url.Content("~/bagery/assets/images/logo.png")" alt="Bagery Logo" />
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="#slider">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#shop">Shop</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main role="main">
+        @RenderBody()
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer py-5 bg-dark text-light">
+        <div class="container text-center">
+            <img src="@Url.Content("~/bagery/assets/images/footer-logo.png")" alt="Bagery Logo" class="mb-3" />
+            <p>&copy; @DateTime.Now.Year Bagery. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bagery JS -->
+    <script src="@Url.Content("~/bagery/assets/js/jquery.js")"></script>
+
+    <script src="@Url.Content("~/bagery/assets/js/jquery.nice-select.min.js")"></script>
+
+    <script src="@Url.Content("~/bagery/assets/js/bootstrap.min.js")"></script>
+
+    <script src="@Url.Content("~/bagery/assets/js/owl.js")"></script>
+
+    <script src="@Url.Content("~/bagery/assets/js/script.js")"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+﻿@model MyAcademyMediatorProject.MediatorPattern.Commands.OrderItemCommands.UpdateOrderItemCommand
+
+@{
+    ViewData["Title"] = "Sipariş Ürünü Güncelle";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2 class="mb-4">Sipariş Ürünü Güncelle</h2>
+
+<form method="post" asp-action="Update" asp-area="Admin">
+    <input type="hidden" asp-for="Id" />
+
+    <div class="mb-3">
+        <label asp-for="OrderId" class="form-label">Sipariş</label>
+        <select asp-for="OrderId" class="form-select" asp-items="@ViewBag.Orders">
+            <option value="">-- Sipariş Seçiniz --</option>
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="ProductId" class="form-label">Ürün</label>
+        <select asp-for="ProductId" class="form-select" asp-items="@ViewBag.Products">
+            <option value="">-- Ürün Seçiniz --</option>
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Quantity" class="form-label">Miktar</label>
+        <input type="number" asp-for="Quantity" class="form-control" min="1" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="UnitPrice" class="form-label">Birim Fiyat</label>
+        <input type="number" asp-for="UnitPrice" class="form-control" step="0.01" min="0" />
+    </div>
+
+    <div class="mt-4">
+        <button type="submit" class="btn btn-dark">Güncelle</button>
+        <a asp-area="Admin" asp-controller="OrderItem" asp-action="Index" class="btn btn-secondary ms-2">Geri</a>
+    </div>
+</form>

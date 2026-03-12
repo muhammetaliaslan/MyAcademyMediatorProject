@@ -1,0 +1,19 @@
+﻿@model MyAcademyMediatorProject.MediatorPattern.Results.CategoryResults.GetCategoryByIdQueryResult
+@{
+    ViewData["Title"] = "UpdateCategory";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Kategori Güncelle</h1>
+
+<form method="post">
+    <input type="hidden" asp-for="Id" />
+
+    <div class="mb-3">
+        <label asp-for="Name" class="form-label">Kategori Adı</label>
+        <input type="text" class="form-control" asp-for="Name" />
+    </div>
+
+    <button class="btn btn-dark">Güncelle</button>
+    <a href="/Admin/Category/Index" class="btn btn-secondary">İptal</a>
+</form>

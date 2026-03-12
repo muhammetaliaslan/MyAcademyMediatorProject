@@ -1,0 +1,34 @@
+﻿@model MyAcademyMediatorProject.MediatorPattern.Commands.ProductCommands.CreateProductCommand
+@{
+    ViewData["Title"] = "CreateProduct";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Yeni Ürün Oluştur</h1>
+
+<form method="post">
+
+    <div class="mb-3">
+        <label asp-for="Name" class="form-label">Ürün Adı</label>
+        <input type="text" asp-for="Name" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Price" class="form-label">Fiyat</label>
+        <input type="number" asp-for="Price" class="form-control" step="0.01" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Stock" class="form-label">Stok</label>
+        <input type="number" asp-for="Stock" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="CategoryId" class="form-label">Kategori</label>
+        <select asp-for="CategoryId" class="form-control" asp-items="@ViewBag.Categories"></select>
+    </div>
+
+    <button class="btn btn-dark">Kaydet</button>
+    <a href="/Admin/Product/Index" class="btn btn-secondary">İptal</a>
+
+</form>

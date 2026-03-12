@@ -1,0 +1,18 @@
+﻿@model MyAcademyMediatorProject.MediatorPattern.Commands.OrderCommands.CreateOrderCommand
+
+@{
+    ViewData["Title"] = "Order";
+    Layout = "~/Areas/User/Views/Shared/_UserLayout.cshtml";
+}
+
+<h1>Create Your Order</h1>
+
+<form asp-action="Order" method="post">
+    <label>Customer Name</label>
+    <input asp-for="CustomerName" required />
+    <label>Customer Email</label>
+    <input asp-for="CustomerEmail" required />
+    <label>Total Amount</label>
+    <input asp-for="TotalAmount" type="number" required />
+    <button type="submit">Submit Order</button>
+</form>

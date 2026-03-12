@@ -1,0 +1,22 @@
+﻿@model MyAcademyMediatorProject.MediatorPattern.Commands.CategoryCommands.CreateCategoryCommand
+@{
+    ViewData["Title"] = "CreateCategory";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Yeni Kategori Oluştur</h1>
+
+<form method="post">
+    <div class="mb-3">
+        <label class="form-label" asp-for="Name">Kategori Adı</label>
+        <input type="text" class="form-control" asp-for="Name" />
+        <span class="text-danger" asp-validation-for="Name"></span>
+    </div>
+
+    <button type="submit" class="btn btn-dark">Kaydet</button>
+    <a asp-action="Index" class="btn btn-secondary">Geri</a>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

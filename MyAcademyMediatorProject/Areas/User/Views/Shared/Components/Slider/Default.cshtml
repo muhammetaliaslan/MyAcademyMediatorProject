@@ -1,0 +1,26 @@
+﻿@model IEnumerable<MyAcademyMediatorProject.MediatorPattern.Results.CampaignResults.GetCampaignsQueryResult>
+
+<div id="slider" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        @foreach (var item in Model)
+        {
+            <div class="carousel-item @(item == Model.First() ? "active" : "")">
+                <img src="~/bagery/assets/images/banner/@item.ImageUrl" class="d-block w-100" alt="@item.Name">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>@item.Name</h5>
+                    <p>@item.Description</p>
+                    <small>Discount: @item.Discount % | Min. Amount: @item.MinimumAmount</small>
+                </div>
+            </div>
+        }
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#slider" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#slider" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>

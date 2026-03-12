@@ -1,0 +1,33 @@
+﻿@model MyAcademyMediatorProject.MediatorPattern.Results.ProductResult.GetProductByIdQueryResult
+@{
+    ViewData["Title"] = "UpdateProduct";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Ürün Güncelle</h1>
+
+<form method="post">
+    <input type="hidden" asp-for="Id" />
+
+    <div class="mb-3">
+        <label>Ürün Adı</label>
+        <input type="text" asp-for="Name" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label>Fiyat</label>
+        <input type="text" asp-for="Price" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label>Stok</label>
+        <input type="text" asp-for="Stock" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label>Kategori</label>
+        <select asp-for="CategoryId" class="form-control" asp-items="@ViewBag.Categories"></select>
+    </div>
+
+    <button class="btn btn-dark">Güncelle</button>
+</form>

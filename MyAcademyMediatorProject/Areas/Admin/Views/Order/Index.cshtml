@@ -1,0 +1,37 @@
+﻿@model List<GetOrdersQueryResult>
+@{
+    ViewData["Title"] = "Siparişler";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Siparişler</h1>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Müşteri</th>
+            <th>Email</th>
+            <th>Toplam Tutar</th>
+            <th>Tarih</th>
+            <th>İşlemler</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var order in Model)
+        {
+            <tr>
+                <td>@order.Id</td>
+                <td>@order.CustomerName</td>
+                <td>@order.CustomerEmail</td>
+                <td>@order.TotalPrice.ToString("C")</td>
+                <td>@order.OrderDate.ToString("dd/MM/yyyy")</td>
+                <td>
+                    <a href="/Admin/Order/Details/@order.Id" class="btn btn-info btn-sm">Detay</a>
+                    <a href="/Admin/Order/Delete/@order.Id" class="btn btn-danger btn-sm"
+                       onclick="return confirm('Siparişi silmek istediğinize emin misiniz?');">Sil</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

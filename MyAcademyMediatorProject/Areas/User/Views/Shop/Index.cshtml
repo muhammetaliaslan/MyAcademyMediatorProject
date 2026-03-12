@@ -1,0 +1,15 @@
+﻿@model List<MyAcademyMediatorProject.MediatorPattern.Results.ProductResult.GetProductsQueryResult>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/User/Views/Shared/_UserLayout.cshtml";
+}
+
+<h1>Our Products</h1>
+<ul>
+    @foreach (var product in Model)
+    {
+        <li>
+            <p>@product.Name - @product.Price ₺</p>
+        </li>
+    }
+</ul>

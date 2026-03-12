@@ -1,0 +1,83 @@
+﻿@model List<MyAcademyMediatorProject.MediatorPattern.Results.CampaignResults.GetCampaignsQueryResult>
+
+@{
+    ViewData["Title"] = "Kampanyalar";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h3>Kampanya Listesi</h3>
+    <a href="/Admin/Campaign/Create" class="btn btn-success">
+        <i class="bi bi-plus-circle"></i> Yeni Kampanya
+    </a>
+</div>
+
+<div class="card shadow-sm">
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover align-middle">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Başlık</th>
+                        <th>Açıklama</th>
+                        <th>İndirim (%)</th>
+                        <th>Başlangıç</th>
+                        <th>Bitiş</th>
+                        <th>Durum</th>
+                        <th style="width:150px;">İşlemler</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @if (Model != null && Model.Count > 0)
+                    {
+                        foreach (var item in Model)
+                        {
+                            var isActive = item.EndDate >= DateTime.Now;
+
+                            <tr>
+                                <td>@item.Name</td>
+                                <td>@item.Description</td>
+                                <td>@item.Discount %</td>
+                                <td>@item.StartDate.ToShortDateString()</td>
+                                <td>@item.EndDate.ToShortDateString()</td>
+                                <td>
+                                    @if (isActive)
+                                    {
+                                        <span class="badge bg-success">Aktif</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="badge bg-danger">Süresi Dolmuş</span>
+                                    }
+                                </td>
+                                <td>
+                                    <a href="/Admin/Campaign/Update/@item.Id" class="btn btn-sm btn-warning">
+                                        <i class="bi bi-pencil-square"></i>
+                                    </a>
+
+                                    <button class="btn btn-sm btn-danger"
+                                            data-bs-toggle="modal"
+                                            data-bs-target="#deleteModal"
+                                            data-id="@item.Id"
+                                            data-title="@item.Name">
+                                        <i class="bi bi-trash"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="7" class="text-center text-muted">
+                                Henüz kampanya eklenmemiş.
+                            </td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+﻿@model MyAcademyMediatorProject.MediatorPattern.Commands.OrderItemCommands.CreateOrderItemCommand
+
+@{
+    ViewData["Title"] = "Yeni Sipariş Ürünü Ekle";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Yeni Sipariş Ürünü Ekle</h2>
+
+<form method="post">
+    <div class="mb-3">
+        <label>Sipariş</label>
+        <select asp-for="OrderId" class="form-control" asp-items="@ViewBag.Orders"></select>
+    </div>
+
+    <div class="mb-3">
+        <label>Ürün</label>
+        <select asp-for="ProductId" class="form-control" asp-items="@ViewBag.Products"></select>
+    </div>
+
+    <div class="mb-3">
+        <label>Miktar</label>
+        <input type="number" asp-for="Quantity" class="form-control" min="1" />
+    </div>
+
+    <div class="mb-3">
+        <label>Birim Fiyat</label>
+        <input type="number" asp-for="UnitPrice" class="form-control" step="0.01" min="0" />
+    </div>
+
+    <button class="btn btn-dark">Kaydet</button>
+    <a href="/Admin/OrderItem/Index" class="btn btn-secondary ms-2">Geri</a>
+</form>

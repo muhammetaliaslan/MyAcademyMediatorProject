@@ -1,0 +1,153 @@
+﻿@using Microsoft.AspNetCore.Mvc.Rendering
+@{
+    Layout = null;
+    var adminName = "Admin";
+
+    var currentPath = ViewContext.HttpContext.Request.Path.Value?.ToLower();
+
+    var menuItems = new List<dynamic> {
+        new { Title = "Dashboard", Icon = "bi-speedometer2", Url = "/admin/dashboard/index" },
+        new { Title = "Kategoriler", Icon = "bi-list-ul", Url = "/admin/category/index" },
+        new { Title = "Ürünler", Icon = "bi-box-seam", Url = "/admin/product/index" },
+        new { Title = "Siparişler", Icon = "bi-bag-check", Url = "/admin/order/index" },
+        new { Title = "Kampanyalar", Icon = "bi-tags", Url = "/admin/campaign/index" },
+        new { Title = "Kullanıcılar", Icon = "bi-people", Url = "/admin/user/index" }
+    };
+}
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Admin Paneli</title>
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="~/css/site.css" />
+
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f5f7fa;
+            margin: 0;
+        }
+
+        .sidebar {
+            height: 100vh;
+            background-color: #2f4050;
+            color: #fff;
+            padding-top: 20px;
+            width: 230px;
+        }
+
+            .sidebar h4 {
+                color: #fff;
+            }
+
+            .sidebar a {
+                display: flex;
+                align-items: center;
+                color: #cfd8dc;
+                padding: 12px 20px;
+                text-decoration: none;
+                transition: 0.3s;
+            }
+
+                .sidebar a:hover {
+                    background-color: #1ab394;
+                    color: #fff;
+                    border-radius: 4px;
+                }
+
+                .sidebar a.active {
+                    background-color: #1ab394;
+                    color: #fff;
+                    border-radius: 4px;
+                }
+
+                .sidebar a i {
+                    margin-right: 10px;
+                }
+
+        .topbar {
+            height: 60px;
+            background-color: #1c1f26;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 25px;
+        }
+
+        .content {
+            padding: 25px;
+        }
+
+        footer {
+            background-color: #1c1f26;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        .admin-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+            .admin-info a {
+                color: #fff;
+                text-decoration: none;
+            }
+
+                .admin-info a:hover {
+                    text-decoration: underline;
+                }
+    </style>
+</head>
+<body>
+    <div class="d-flex">
+
+        <!-- Sidebar -->
+        <div class="sidebar flex-shrink-0">
+            <h4 class="text-center mb-4">Admin Paneli</h4>
+
+            @foreach (var item in menuItems)
+            {
+                var isActive = currentPath != null && currentPath.StartsWith(item.Url);
+
+                <a href="@item.Url" class="@(isActive ? "active" : "")">
+                    <i class="bi @item.Icon"></i> @item.Title
+                </a>
+            }
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex-grow-1">
+
+            <!-- Topbar -->
+            <div class="topbar">
+                <h5 class="mb-0">@ViewData["Title"]</h5>
+                <div class="admin-info">
+                    <span>@adminName</span>
+                    <a href="/Account/Logout">
+                        <i class="bi bi-box-arrow-right"></i> Çıkış
+                    </a>
+                </div>
+            </div>
+
+            <!-- Page Content -->
+            <div class="content">
+                @RenderBody()
+            </div>
+
+        </div>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
