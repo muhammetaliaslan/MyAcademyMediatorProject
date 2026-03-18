@@ -6,6 +6,8 @@ namespace MyAcademyMediatorProject.MediatorPattern.Commands.ProductCommands
                                       string Name,
                                       decimal Price,
                                       int Stock,
+                                      string ImageUrl,
+                                      IFormFile? ImageFile,
                                       Guid CategoryId) : IRequest
     {
     }

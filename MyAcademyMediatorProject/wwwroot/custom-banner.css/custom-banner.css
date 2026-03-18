@@ -1,0 +1,31 @@
+﻿/* Banner section genel */
+.banner-section {
+    padding: 50px 0;
+    position: relative;
+    background-color: transparent; /* Arka plan rengini kaldırdık */
+}
+
+/* Slider içi düzenleme */
+.banner-carousel .content-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+/* Sol yazılar */
+.banner-carousel .content-box {
+    max-width: 500px;
+}
+
+/* Sağdaki banner görseli */
+.banner-carousel .banner-img {
+    width: 702px;
+    height: 810px;
+    border-radius: 10px;
+    position: relative;
+    /* Görseli istediğin gibi konumlandırmak için */
+    top: -60px; /* Yukarı/aşağı kaydır */
+    left: -400px; /* Sağ/sol kaydır */
+    object-fit: cover; /* Görsel kutuyu doldursun, kırpmadan */
+}

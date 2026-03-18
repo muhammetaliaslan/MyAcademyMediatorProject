@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using MyAcademyMediatorProject.Entities;
+using MyAcademyMediatorProject.Models;
 
 namespace MyAcademyMediatorProject.Context
 {
@@ -18,5 +19,7 @@ namespace MyAcademyMediatorProject.Context
         public DbSet<OrderItem> OrderItems { get; set; }
         public DbSet<Campaign> Campaigns { get; set; }
         public DbSet<Log> Logs { get; set; }
+        public DbSet<Banner> Banners { get; set; }
+
     }
 }

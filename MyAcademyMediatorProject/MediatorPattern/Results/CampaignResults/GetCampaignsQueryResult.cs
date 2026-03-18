@@ -13,6 +13,7 @@ namespace MyAcademyMediatorProject.MediatorPattern.Results.CampaignResults
         public DateTime EndDate { get; set; }
         public bool IsActive { get; set; }
         public string? ImageUrl { get; set; } // ekledik
+        public string? Price { get; set; } // ekledik
 
         // 8 parametreli constructor
         public GetCampaignsQueryResult(

@@ -1,6 +1,7 @@
 ﻿@model MyAcademyMediatorProject.MediatorPattern.Commands.ProductCommands.CreateProductCommand
+
 @{
-    ViewData["Title"] = "CreateProduct";
+    ViewData["Title"] = "Yeni Ürün Oluştur";
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
 
@@ -26,6 +27,12 @@
     <div class="mb-3">
         <label asp-for="CategoryId" class="form-label">Kategori</label>
         <select asp-for="CategoryId" class="form-control" asp-items="@ViewBag.Categories"></select>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="ImageUrl" class="form-label">Ürün Görseli URL</label>
+        <input type="text" asp-for="ImageUrl" class="form-control" placeholder="/Bagery/assets/images/resource/shop/shop-2.jpg" />
+        <small class="text-muted">Görsel URL’sini wwwroot içindeki klasörden ekleyebilirsiniz.</small>
     </div>
 
     <button class="btn btn-dark">Kaydet</button>

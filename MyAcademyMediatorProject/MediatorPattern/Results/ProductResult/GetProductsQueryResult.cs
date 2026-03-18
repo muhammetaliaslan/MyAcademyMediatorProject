@@ -17,5 +17,7 @@ namespace MyAcademyMediatorProject.MediatorPattern.Results.ProductResult
         public string Description { get; set; } = string.Empty;
 
         public string CategoryName { get; set; } = string.Empty; // ⭐ EKLENDİ
+        public string ProductName { get; set; } = string.Empty; // ⭐ EKLENDİ
+     
     }
 }

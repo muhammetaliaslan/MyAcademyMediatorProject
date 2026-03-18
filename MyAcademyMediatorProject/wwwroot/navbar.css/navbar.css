@@ -1,0 +1,43 @@
+﻿/* navbar.css */
+
+/* Navbar ve header genel */
+header.main-header,
+.header-lower {
+    position: fixed; /* Navbar’ı sayfanın en üstüne sabitle */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999; /* Banner ve diğer içeriklerin üstünde */
+    background-color: #ffffff; /* Arka plan rengi */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Hafif gölge */
+}
+
+/* Navbar içeriği container */
+.menu-area .main-menu {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+/* Navbar linkleri */
+.main-menu ul.navigation li a {
+    color: #222;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px 15px;
+    transition: all 0.3s ease;
+}
+
+    .main-menu ul.navigation li a:hover {
+        color: #1ab394;
+    }
+
+/* Mobile nav toggler (hamburger menü) */
+.mobile-nav-toggler {
+    display: none; /* İsteğe bağlı mobil görünüm için açabilirsin */
+}
+
+/* Banner’ın navbar altına kaymasını sağla */
+.banner-section {
+    padding-top: 140px; /* Navbar yüksekliğine göre ayarla */
+}

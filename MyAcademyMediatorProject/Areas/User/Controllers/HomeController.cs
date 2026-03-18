@@ -1,8 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using MediatR;
-using MyAcademyMediatorProject.MediatorPattern.Queries.CampaignQueries;
-using MyAcademyMediatorProject.MediatorPattern.Queries.ProductQueries;
+﻿using MediatR;
+using Microsoft.AspNetCore.Mvc;
 using MyAcademyMediatorProject.Models;
+using MyAcademyMediatorProject.MediatorPattern.Queries.ProductQueries;
+using MyAcademyMediatorProject.MediatorPattern.Queries.CampaignQueries;
+using MyAcademyMediatorProject.MediatorPattern.Queries.Banner; // Banner query ekledik
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace MyAcademyMediatorProject.Areas.User.Controllers
 {
@@ -18,49 +22,48 @@ namespace MyAcademyMediatorProject.Areas.User.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var campaigns = await _mediator.Send(new GetCampaignsQuery());
+            // Ürünleri çek
             var products = await _mediator.Send(new GetProductsQuery());
-            Console.WriteLine($"Kampanya sayısı: {campaigns.Count}");
-            Console.WriteLine($"Ürün sayısı: {products.Count}");
-            foreach (var c in campaigns)
-                Console.WriteLine($"Kampanya: {c.Name}, ImageUrl: {c.ImageUrl}, IsActive: {c.IsActive}");
 
-            var sliders = campaigns.Select(c => new SliderItem
+            // Kampanyaları çek
+            var campaigns = await _mediator.Send(new GetCampaignsQuery());
+
+            // Bannerları çek (aktif olanlar)
+            var banners = await _mediator.Send(new GetBannersQuery());
+
+            // Slider listesini dinamik oluştur
+            var sliders = banners.Select(b => new SliderItem
             {
-                Title = c.Name,
-                Subtitle = c.Description,
-                ImageUrl = c.ImageUrl ?? "slide-1.jpg"
+                Title = b.Title,
+                Subtitle = b.Subtitle,
+                ImageUrl = b.ImageUrl
             }).ToList();
 
-            var gallery = campaigns.Select(c => new GalleryItem
+            // Eğer banner yoksa fallback slider
+            if (!sliders.Any())
             {
-                ImageUrl = c.ImageUrl ?? "gallery-1.jpg",
-                AltText = c.Name
-            }).ToList();
-
-            var testimonials = new List<TestimonialItem>
-            {
-                new TestimonialItem
+                sliders = new List<SliderItem>
                 {
-                    Name="Jane Doe",
-                    Content="Absolutely delicious!",
-                    ImageUrl="testimonial-1.png"
-                },
-                new TestimonialItem
-                {
-                    Name="John Smith",
-                    Content="Amazing bakery!",
-                    ImageUrl="testimonial-2.png"
-                }
-            };
+                    new SliderItem
+                    {
+                        Title = "Fresh Bread Everyday",
+                        Subtitle = "Welcome to Bagery Bakery",
+                        ImageUrl = "/Bagery/assets/images/banner/banner-1.jpg"
+                    },
+                    new SliderItem
+                    {
+                        Title = "Delicious Cakes",
+                        Subtitle = "Taste Our Special Desserts",
+                        ImageUrl = "/Bagery/assets/images/banner/banner-2.jpg"
+                    }
+                };
+            }
 
             var model = new HomeIndexViewModel
             {
-                Campaigns = campaigns,
                 Products = products,
-                Sliders = sliders,
-                Gallery = gallery,
-                Testimonials = testimonials
+                Campaigns = campaigns,
+                Sliders = sliders
             };
 
             return View(model);

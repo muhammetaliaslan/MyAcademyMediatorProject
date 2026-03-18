@@ -1,0 +1,70 @@
+﻿@model IEnumerable<MyAcademyMediatorProject.Entities.Banner>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="container-fluid">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Bannerlar</h1>
+        <a href="@Url.Action("Create", "Banner", new { area = "Admin" })" class="btn btn-primary">
+            <i class="bi bi-plus-lg"></i> Yeni Banner Ekle
+        </a>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Başlık</th>
+                    <th>Alt Başlık</th>
+                    <th>Görsel</th>
+                    <th>Durum</th>
+                    <th>İşlemler</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model != null && Model.Any())
+                {
+                    foreach (var banner in Model)
+                    {
+                        <tr>
+                            <td>@banner.Id</td>
+                            <td>@banner.Title</td>
+                            <td>@banner.Subtitle</td>
+                            <td>
+                                <img src="@banner.ImageUrl" alt="@banner.Title" width="120" />
+                            </td>
+                            <td>
+                                @if (banner.IsActive)
+                                {
+                                    <span class="badge bg-success">Aktif</span>
+                                }
+                                else
+                                {
+                                    <span class="badge bg-secondary">Pasif</span>
+                                }
+                            </td>
+                            <td>
+                                <a href="@Url.Action("Edit", "Banner", new { id = banner.Id, area = "Admin" })" class="btn btn-sm btn-warning">
+                                    <i class="bi bi-pencil"></i> Düzenle
+                                </a>
+                                <a href="@Url.Action("Delete", "Banner", new { id = banner.Id, area = "Admin" })" class="btn btn-sm btn-danger" onclick="return confirm('Emin misiniz?');">
+                                    <i class="bi bi-trash"></i> Sil
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="6" class="text-center">Banner bulunamadı.</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

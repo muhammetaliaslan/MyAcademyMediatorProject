@@ -17,13 +17,14 @@ public class CreateCampaignCommandHandler : IRequestHandler<CreateCampaignComman
         var campaign = new Campaign
         {
             Id = Guid.NewGuid(),
-            Name = request.Title, // Title yerine Name
+            Name = request.Name, // Artık Title kullanıyoruz
             Description = request.Description,
             Discount = request.Discount,
-            MinimumAmount = request.MinimumAmount, // ekledik
-            StartDate = request.StartDate,
-            EndDate = request.EndDate,
-            IsActive = true // default olarak aktif
+            MinimumAmount = request.MinimumAmount,
+            // ⚡ DateTime UTC olarak ayarlandı
+            StartDate = DateTime.SpecifyKind(request.StartDate, DateTimeKind.Utc),
+            EndDate = DateTime.SpecifyKind(request.EndDate, DateTimeKind.Utc),
+            IsActive = true
         };
 
         await _repository.CreateAsync(campaign);

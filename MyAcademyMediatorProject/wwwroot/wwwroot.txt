@@ -1,0 +1,384 @@
+Folder PATH listing
+Volume serial number is D2C7-BEDF
+C:.
+|   banner-image-1.png
+|   shop-2.jpg
+|   shop-3.jpg
+|   wwwroot.txt
+|   wwwroot_structure.txt
+|   
+\---Bagery
+    |   about-element-1.html
+    |   about-element-2.html
+    |   about.html
+    |   blog-details.html
+    |   blog-grid.html
+    |   blog-masonry.html
+    |   blog-standard.html
+    |   cart.html
+    |   checkout.html
+    |   clients-element.html
+    |   contact.html
+    |   error.html
+    |   faq.html
+    |   feature-element-1.html
+    |   feature-element-2.html
+    |   gallery-1.html
+    |   gallery-2.html
+    |   gallery-3.html
+    |   index-2.html
+    |   index-3.html
+    |   index-4.html
+    |   index-onepage.html
+    |   index-rtl.html
+    |   index.html
+    |   news-element-1.html
+    |   news-element-2.html
+    |   our-menu.html
+    |   project-element-1.html
+    |   project-element-2.html
+    |   sendemail.php
+    |   service-element-1.html
+    |   service-element-2.html
+    |   service.html
+    |   shop-1.html
+    |   shop-2.html
+    |   shop-details.html
+    |   shop-element-1.html
+    |   shop-element-2.html
+    |   team-element-1.html
+    |   team-element-2.html
+    |   team.html
+    |   testimonial-element.html
+    |   testimonial.html
+    |   
+    \---assets
+        +---css
+        |       animate.css
+        |       bootstrap.css
+        |       color.css
+        |       flaticon.css
+        |       font-awesome-all.css
+        |       global.css
+        |       jquery-ui.css
+        |       jquery.bootstrap-touchspin.css
+        |       jquery.fancybox.min.css
+        |       nice-select.css
+        |       owl.css
+        |       responsive.css
+        |       rtl.css
+        |       style.css
+        |       swiper.min.css
+        |       
+        +---fonts
+        |       fa-brands-400.eot
+        |       fa-brands-400.svg
+        |       fa-brands-400.ttf
+        |       fa-brands-400.woff
+        |       fa-brands-400.woff2
+        |       fa-light-300.eot
+        |       fa-light-300.svg
+        |       fa-light-300.ttf
+        |       fa-light-300.woff
+        |       fa-light-300.woff2
+        |       fa-regular-400.eot
+        |       fa-regular-400.svg
+        |       fa-regular-400.ttf
+        |       fa-regular-400.woff
+        |       fa-regular-400.woff2
+        |       fa-solid-900.eot
+        |       fa-solid-900.svg
+        |       fa-solid-900.ttf
+        |       fa-solid-900.woff
+        |       fa-solid-900.woff2
+        |       icomoon.eot
+        |       icomoon.svg
+        |       icomoon.ttf
+        |       icomoon.woff
+        |       
+        +---images
+        |   |   banner-1.jpg
+        |   |   favicon.ico
+        |   |   footer-logo.png
+        |   |   logo-2.png
+        |   |   logo-3.png
+        |   |   logo-4.png
+        |   |   logo-5.png
+        |   |   logo.png
+        |   |   small-logo.png
+        |   |   
+        |   +---background
+        |   |       blog-1.jpg
+        |   |       contact-1.jpg
+        |   |       contact-2.jpg
+        |   |       contact-3.jpg
+        |   |       faq-1.jpg
+        |   |       faq-2.jpg
+        |   |       footer-1.jpg
+        |   |       footer-2.jpg
+        |   |       gallery-1.jpg
+        |   |       history-1.jpg
+        |   |       menu-1.jpg
+        |   |       menu-bg.jpg
+        |   |       mission-1.jpg
+        |   |       news-bg-1.jpg
+        |   |       page-title.jpg
+        |   |       promotion-1.jpg
+        |   |       promotion-2.jpg
+        |   |       resarvation-1.jpg
+        |   |       service-1.jpg
+        |   |       shop-1.jpg
+        |   |       shop-2.jpg
+        |   |       single-shop-1.jpg
+        |   |       testimonial-1.jpg
+        |   |       testimonial-2.jpg
+        |   |       testimonial-3.jpg
+        |   |       video-1.jpg
+        |   |       video-2.jpg
+        |   |       
+        |   +---banner
+        |   |       banner-1.jpg
+        |   |       banner-10.jpg
+        |   |       banner-11.jpg
+        |   |       banner-12.jpg
+        |   |       banner-13.jpg
+        |   |       banner-14.jpg
+        |   |       banner-2.jpg
+        |   |       banner-3.jpg
+        |   |       banner-4.jpg
+        |   |       banner-5.jpg
+        |   |       banner-6.jpg
+        |   |       banner-7.jpg
+        |   |       banner-8.jpg
+        |   |       banner-9.jpg
+        |   |       banner-image-1.png
+        |   |       banner-image-2.png
+        |   |       banner-image-3.png
+        |   |       banner-image-4.png
+        |   |       banner-image-5.png
+        |   |       banner-image-6.png
+        |   |       
+        |   +---clients
+        |   |       clients-logo-1.png
+        |   |       clients-logo-10.png
+        |   |       clients-logo-11.png
+        |   |       clients-logo-12.png
+        |   |       clients-logo-2.png
+        |   |       clients-logo-3.png
+        |   |       clients-logo-4.png
+        |   |       clients-logo-5.png
+        |   |       clients-logo-6.png
+        |   |       clients-logo-7.png
+        |   |       clients-logo-8.png
+        |   |       clients-logo-9.png
+        |   |       
+        |   +---gallery
+        |   |       project-1.jpg
+        |   |       project-10.jpg
+        |   |       project-11.jpg
+        |   |       project-12.jpg
+        |   |       project-13.jpg
+        |   |       project-14.jpg
+        |   |       project-15.jpg
+        |   |       project-16.jpg
+        |   |       project-17.jpg
+        |   |       project-18.jpg
+        |   |       project-19.jpg
+        |   |       project-2.jpg
+        |   |       project-20.jpg
+        |   |       project-21.jpg
+        |   |       project-3.jpg
+        |   |       project-4.jpg
+        |   |       project-5.jpg
+        |   |       project-6.jpg
+        |   |       project-7.jpg
+        |   |       project-8.jpg
+        |   |       project-9.jpg
+        |   |       
+        |   +---icons
+        |   |       anim-icon-1.png
+        |   |       anim-icon-2.png
+        |   |       anim-icon-3.png
+        |   |       anim-icon-4.png
+        |   |       anim-icon-5.png
+        |   |       anim-icon-6.png
+        |   |       anim-icon-7.png
+        |   |       anim-icon-8.png
+        |   |       cross-out.png
+        |   |       icon-bg-1.png
+        |   |       icon-bg-2.png
+        |   |       icon-bg-3.png
+        |   |       icon-bg-4.png
+        |   |       icon-bg-5.png
+        |   |       icon-bg-6.png
+        |   |       icon-bg-7.png
+        |   |       icon-bg-8.png
+        |   |       icon-bg-9.png
+        |   |       map-marker.png
+        |   |       signature-1.png
+        |   |       signature-2.png
+        |   |       
+        |   +---news
+        |   |       comment-1.png
+        |   |       comment-2.png
+        |   |       comment-3.png
+        |   |       news-1.jpg
+        |   |       news-10.jpg
+        |   |       news-11.jpg
+        |   |       news-12.jpg
+        |   |       news-13.jpg
+        |   |       news-14.jpg
+        |   |       news-15.jpg
+        |   |       news-16.jpg
+        |   |       news-17.jpg
+        |   |       news-18.jpg
+        |   |       news-19.jpg
+        |   |       news-2.jpg
+        |   |       news-20.jpg
+        |   |       news-21.jpg
+        |   |       news-3.jpg
+        |   |       news-4.jpg
+        |   |       news-5.jpg
+        |   |       news-6.jpg
+        |   |       news-7.jpg
+        |   |       news-8.jpg
+        |   |       news-9.jpg
+        |   |       post-1.jpg
+        |   |       post-2.jpg
+        |   |       post-3.jpg
+        |   |       
+        |   +---resource
+        |   |   |   coffee-1.png
+        |   |   |   coffee-3.png
+        |   |   |   coffee-4.png
+        |   |   |   history-1.jpg
+        |   |   |   history-2.jpg
+        |   |   |   history-3.jpg
+        |   |   |   history-4.jpg
+        |   |   |   ice-cream-1.png
+        |   |   |   menu-1.png
+        |   |   |   menu-2.png
+        |   |   |   menu-3.png
+        |   |   |   menu-4.png
+        |   |   |   menu-5.png
+        |   |   |   menu-6.png
+        |   |   |   menu-7.png
+        |   |   |   menu-8.png
+        |   |   |   promotion-1.jpg
+        |   |   |   promotion-2.jpg
+        |   |   |   promotion-3.jpg
+        |   |   |   promotion-4.jpg
+        |   |   |   promotion-5.jpg
+        |   |   |   promotion-6.jpg
+        |   |   |   promotion-7.jpg
+        |   |   |   promotion-8.jpg
+        |   |   |   story-1.jpg
+        |   |   |   story-1.png
+        |   |   |   story-2.jpg
+        |   |   |   testimonial-1.png
+        |   |   |   testimonial-2.png
+        |   |   |   testimonial-3.png
+        |   |   |   testimonial-4.png
+        |   |   |   testimonial-5.png
+        |   |   |   
+        |   |   \---shop
+        |   |           cart-1.jpg
+        |   |           cart-2.jpg
+        |   |           cart-3.jpg
+        |   |           order-1.jpg
+        |   |           order-2.jpg
+        |   |           order-3.jpg
+        |   |           post-1.jpg
+        |   |           post-2.jpg
+        |   |           post-3.jpg
+        |   |           product-1.jpg
+        |   |           product-2.jpg
+        |   |           product-3.jpg
+        |   |           product-4.jpg
+        |   |           product-5.jpg
+        |   |           product-6.jpg
+        |   |           review-1.png
+        |   |           review-2.png
+        |   |           shop-1.jpg
+        |   |           shop-10.jpg
+        |   |           shop-11.jpg
+        |   |           shop-12.jpg
+        |   |           shop-13.jpg
+        |   |           shop-14.jpg
+        |   |           shop-15.jpg
+        |   |           shop-16.jpg
+        |   |           shop-17.jpg
+        |   |           shop-18.jpg
+        |   |           shop-19.jpg
+        |   |           shop-2.jpg
+        |   |           shop-20.jpg
+        |   |           shop-21.jpg
+        |   |           shop-3.jpg
+        |   |           shop-4.jpg
+        |   |           shop-5.jpg
+        |   |           shop-6.jpg
+        |   |           shop-7.jpg
+        |   |           shop-8.jpg
+        |   |           shop-9.jpg
+        |   |           shop-single-1.jpg
+        |   |           shop-single-2.jpg
+        |   |           shop-single-3.jpg
+        |   |           single-thumb-1.jpg
+        |   |           single-thumb-2.jpg
+        |   |           single-thumb-3.jpg
+        |   |           
+        |   +---shape
+        |   |       bg-layer-1.png
+        |   |       shape-1.jpg
+        |   |       shape-1.png
+        |   |       shape-10.png
+        |   |       shape-11.png
+        |   |       shape-12.png
+        |   |       shape-13.png
+        |   |       shape-14.png
+        |   |       shape-15.png
+        |   |       shape-16.png
+        |   |       shape-17.png
+        |   |       shape-18.png
+        |   |       shape-19.png
+        |   |       shape-2.jpg
+        |   |       shape-2.png
+        |   |       shape-3.png
+        |   |       shape-4.png
+        |   |       shape-5.png
+        |   |       shape-6.png
+        |   |       shape-7.png
+        |   |       shape-8.png
+        |   |       shape-9.png
+        |   |       
+        |   \---team
+        |           team-1.jpg
+        |           team-2.jpg
+        |           team-3.jpg
+        |           team-4.jpg
+        |           team-5.jpg
+        |           team-6.jpg
+        |           
+        \---js
+                appear.js
+                bootstrap.min.js
+                bxslider.js
+                gmaps.js
+                isotope.js
+                jquery-ui.js
+                jquery.bootstrap-touchspin.js
+                jquery.countTo.js
+                jquery.fancybox.js
+                jquery.js
+                jquery.nice-select.min.js
+                map-helper.js
+                nav-tool.js
+                owl.js
+                pagenav.js
+                popper.min.js
+                script.js
+                scrollbar.js
+                swiper.min.js
+                validation.js
+                wow.js
+                

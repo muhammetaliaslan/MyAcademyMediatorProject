@@ -6,6 +6,7 @@ namespace MyAcademyMediatorProject.MediatorPattern.Results.ProductResult
                                        string Name,
                                        decimal Price,
                                        int Stock,
+                                       string ImageUrl,
                                        Guid CategoryId)
     {
     }

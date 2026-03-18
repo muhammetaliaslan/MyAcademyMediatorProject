@@ -1,0 +1,38 @@
+﻿@model MyAcademyMediatorProject.MediatorPattern.Commands.BannerCommands.CreateBannerCommand
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container-fluid">
+    <h1 class="h3 mb-4 text-gray-800">Yeni Banner Ekle</h1>
+
+    <form asp-action="Create" asp-controller="Banner" method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label class="form-label">Başlık</label>
+            <input asp-for="Title" class="form-control" placeholder="Banner başlığını giriniz" />
+            <span asp-validation-for="Title" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Alt Başlık</label>
+            <input asp-for="Subtitle" class="form-control" placeholder="Banner alt başlığını giriniz" />
+            <span asp-validation-for="Subtitle" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Banner Görseli</label>
+            <input asp-for="ImageFile" type="file" class="form-control" />
+            <span asp-validation-for="ImageFile" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary">
+            <i class="bi bi-save"></i> Kaydet
+        </button>
+        <a asp-action="Index" asp-controller="Banner" class="btn btn-secondary">İptal</a>
+    </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

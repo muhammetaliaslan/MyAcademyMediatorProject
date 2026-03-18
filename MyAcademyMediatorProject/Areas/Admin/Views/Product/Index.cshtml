@@ -10,6 +10,7 @@
     <thead class="table-light">
         <tr>
             <th>#</th>
+            <th>Görsel</th> <!-- ⭐ Yeni kolon -->
             <th>Ürün Adı</th>
             <th class="text-end">Fiyat</th>
             <th class="text-end">Stok</th>
@@ -26,6 +27,16 @@
             count++;
             <tr>
                 <td>@count</td>
+                <td>
+                    @if (!string.IsNullOrEmpty(item.ImageUrl))
+                    {
+                        <img src="@item.ImageUrl" alt="@item.Name" style="width:50px; height:50px; object-fit:cover;" />
+                    }
+                    else
+                    {
+                        <span>Yok</span>
+                    }
+                </td>
                 <td>@item.Name</td>
                 <td class="text-end">@item.Price TL</td>
                 <td class="text-end">@item.Stock</td>

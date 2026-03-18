@@ -1,6 +1,7 @@
 ﻿@model MyAcademyMediatorProject.MediatorPattern.Results.ProductResult.GetProductByIdQueryResult
+
 @{
-    ViewData["Title"] = "UpdateProduct";
+    ViewData["Title"] = "Ürün Güncelle";
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
 
@@ -16,17 +17,23 @@
 
     <div class="mb-3">
         <label>Fiyat</label>
-        <input type="text" asp-for="Price" class="form-control" />
+        <input type="number" asp-for="Price" class="form-control" step="0.01" />
     </div>
 
     <div class="mb-3">
         <label>Stok</label>
-        <input type="text" asp-for="Stock" class="form-control" />
+        <input type="number" asp-for="Stock" class="form-control" />
     </div>
 
     <div class="mb-3">
         <label>Kategori</label>
         <select asp-for="CategoryId" class="form-control" asp-items="@ViewBag.Categories"></select>
+    </div>
+
+    <div class="mb-3">
+        <label>Ürün Görseli URL</label>
+        <input type="text" asp-for="ImageUrl" class="form-control" />
+        <small class="text-muted">Mevcut görsel: <img src="@Model.ImageUrl" alt="Ürün Görseli" width="100" /></small>
     </div>
 
     <button class="btn btn-dark">Güncelle</button>
