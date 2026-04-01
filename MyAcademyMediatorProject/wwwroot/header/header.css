@@ -1,0 +1,66 @@
+﻿/* ================= HEADER ================= */
+
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    background: transparent !important;
+    transition: all 0.3s ease;
+}
+
+    /* Header alt bar */
+    .main-header .header-lower {
+        padding: 20px 0;
+    }
+
+    /* Logo */
+    .main-header .logo-box img {
+        max-height: 60px;
+    }
+
+/* Menü alanı */
+.main-menu ul {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+    /* Menü linkleri */
+    .main-menu ul li a {
+        color: #fff;
+        font-weight: 500;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+
+        .main-menu ul li a:hover {
+            color: #f5a623;
+        }
+
+/* Sticky header */
+.sticky-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.85);
+    z-index: 1000;
+    display: none;
+}
+
+/* Mobile icon */
+.mobile-nav-toggler {
+    color: #fff;
+    cursor: pointer;
+}
+.sticky-header {
+    background: transparent !important;
+    display: block; /* veya template ne istiyorsa */
+}
+.main-header.scrolled {
+    background: #f5f0e6 !important; /* 🔥 krem rengi */
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}

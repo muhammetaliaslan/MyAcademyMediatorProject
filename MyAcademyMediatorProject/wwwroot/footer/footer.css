@@ -1,0 +1,242 @@
+﻿/* =========================
+   MAIN FOOTER BASE
+========================= */
+
+.main-footer {
+    position: relative;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+    .main-footer::before {
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        background: rgba(0,0,0,0.75);
+    }
+
+    .main-footer .auto-container {
+        position: relative;
+        z-index: 2;
+    }
+
+    /* =========================
+   SUBSCRIBE
+========================= */
+
+    .main-footer .subscribe-inner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 60px;
+        flex-wrap: wrap;
+        padding: 90px 0;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+
+        .main-footer .subscribe-inner .text {
+            flex: 1;
+            text-align: center;
+        }
+
+            .main-footer .subscribe-inner .text h2 {
+                font-size: 28px;
+                font-weight: 700;
+                color: #fff;
+                margin: 0;
+                line-height: 1.2;
+            }
+
+        .main-footer .subscribe-inner .subscribe-form {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+            .main-footer .subscribe-inner .subscribe-form .form-group {
+                display: flex;
+                align-items: center;
+                margin: 0;
+            }
+
+            .main-footer .subscribe-inner .subscribe-form input[type='email'] {
+                width: 320px;
+                height: 50px;
+                padding: 10px 20px;
+                border: none;
+                outline: none;
+                background: rgba(255,255,255,0.08);
+                color: #fff;
+            }
+
+            .main-footer .subscribe-inner .subscribe-form input::placeholder {
+                color: #ccc;
+            }
+
+            .main-footer .subscribe-inner .subscribe-form button {
+                margin-left: 10px;
+                padding: 12px 30px;
+                border: none;
+                background: #e3a087;
+                color: #fff;
+                cursor: pointer;
+            }
+
+/* =========================
+   FOOTER TOP
+========================= */
+
+.footer-top {
+    padding: 120px 0 80px;
+}
+
+    .footer-top .footer-widget {
+        display: flex;
+        flex-direction: column;
+        padding-left: 0;
+    }
+
+        .footer-top .footer-widget h3 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+    /* =========================
+   CONTACT
+========================= */
+
+    .footer-top .contact-widget .info-list li {
+        font-size: 14px;
+        line-height: 24px;
+        color: #bcbcbc;
+        margin-bottom: 6px;
+    }
+
+        .footer-top .contact-widget .info-list li a {
+            color: #bcbcbc;
+        }
+
+    /* SOCIAL */
+    .footer-top .contact-widget .social-links li {
+        display: inline-block;
+        margin-right: 10px;
+    }
+
+        .footer-top .contact-widget .social-links li a {
+            width: 42px;
+            height: 42px;
+            line-height: 42px;
+            display: inline-block;
+            text-align: center;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            color: #fff;
+            transition: 0.3s;
+        }
+
+            .footer-top .contact-widget .social-links li a:hover {
+                background: #e3a087;
+            }
+
+    /* =========================
+   LINKS
+========================= */
+
+    .footer-top .links-widget .links-list li {
+        margin-bottom: 8px;
+    }
+
+        .footer-top .links-widget .links-list li a {
+            font-size: 14px;
+            color: #bcbcbc;
+            text-decoration: none;
+            position: relative;
+            padding-left: 12px;
+            line-height: 24px;
+        }
+
+            .footer-top .links-widget .links-list li a i {
+                position: absolute;
+                left: 0;
+                top: 6px;
+            }
+
+            .footer-top .links-widget .links-list li a:hover {
+                color: #fff;
+            }
+
+    /* =========================
+   OPENING HOURS (FIX FINAL)
+========================= */
+
+    .footer-top .shediul-list {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+        .footer-top .shediul-list li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 4px 10px;
+            margin-bottom: 6px;
+            border-radius: 4px;
+            box-sizing: border-box;
+            color: #bcbcbc;
+            line-height: 1.4;
+        }
+
+            /* sağdaki saat */
+            .footer-top .shediul-list li span:last-child {
+                white-space: nowrap;
+            }
+
+/* =========================
+   FOOTER BOTTOM
+========================= */
+
+.footer-bottom {
+    background: #121212;
+    padding: 18px 0;
+}
+
+    .footer-bottom .copyright p {
+        font-size: 14px;
+        color: #bcbcbc;
+    }
+
+        .footer-bottom .copyright p a {
+            color: #fff;
+        }
+
+    .footer-bottom .footer-nav li {
+        display: inline-block;
+        margin-right: 15px;
+        font-size: 14px;
+    }
+
+        .footer-bottom .footer-nav li a {
+            color: #bcbcbc;
+        }
+
+            .footer-bottom .footer-nav li a:hover {
+                color: #fff;
+            }
+
+    .footer-bottom .auto-container {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 10px;
+    }

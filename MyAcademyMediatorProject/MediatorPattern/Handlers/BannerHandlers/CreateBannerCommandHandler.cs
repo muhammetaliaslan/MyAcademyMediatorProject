@@ -25,7 +25,7 @@ namespace MyAcademyMediatorProject.MediatorPattern.Commands.BannerCommands
         public async Task<int> Handle(CreateBannerCommand request, CancellationToken cancellationToken)
         {
             // Banner görselleri için klasör yolu
-            var folderPath = Path.Combine(_env.WebRootPath, "assets/images/banner");
+            var folderPath = Path.Combine(_env.WebRootPath, "/banner");
 
             // Eğer klasör yoksa oluştur
             if (!Directory.Exists(folderPath))
@@ -49,6 +49,7 @@ namespace MyAcademyMediatorProject.MediatorPattern.Commands.BannerCommands
                 Title = request.Title,
                 Subtitle = request.Subtitle,
                 ImageUrl = $"/assets/images/banner/{fileName}",
+                BgColor = request.BgColor,
                 IsActive = true
             };
 

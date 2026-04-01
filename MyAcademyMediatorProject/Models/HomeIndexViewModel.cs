@@ -18,6 +18,7 @@ namespace MyAcademyMediatorProject.Models
         public string Title { get; set; } = string.Empty;
         public string Subtitle { get; set; } = string.Empty;
         public string ImageUrl { get; set; } = string.Empty;
+        public string BgColor { get; set; } = "#FFA500"; // default turuncu
     }
 
     public class GalleryItem

@@ -1,0 +1,190 @@
+﻿.news-section {
+    position: relative;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 120px 0; /* 300 fazla, ideal değer */
+}
+
+    .news-section:before {
+        position: absolute;
+        content: '';
+        background: #fff;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        opacity: 0.92;
+    }
+
+    /* CONTAINER GENİŞLET (EN KRİTİK KISIM) */
+    .news-section .auto-container {
+        max-width: 1300px;
+    }
+
+/* KART */
+.news-block-one .inner-box {
+    position: relative;
+    display: block;
+    background: #fff;
+    padding: 25px; /* biraz küçülttük */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 500ms ease;
+}
+
+    .news-block-one .inner-box:hover {
+        box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+
+    /* GÖRSEL */
+    .news-block-one .inner-box .image-box {
+        position: relative;
+        width: 100%;
+        height: 260px; /* büyüttük */
+        overflow: hidden;
+        background: #000;
+    }
+
+        .news-block-one .inner-box .image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 500ms ease;
+        }
+
+    .news-block-one .inner-box:hover .image-box img {
+        transform: scale(1.08);
+        opacity: 0.7;
+    }
+
+    /* CATEGORY */
+    .news-block-one .inner-box .image-box .category {
+        position: absolute;
+        left: 20px;
+        top: 20px;
+        font-size: 12px;
+        color: #fff;
+        padding: 5px 15px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        background: #ff7a00; /* turuncu ekledik */
+    }
+
+    /* CONTENT */
+    .news-block-one .inner-box .lower-content {
+        padding-top: 20px;
+    }
+
+        .news-block-one .inner-box .lower-content h3 {
+            font-size: 24px;
+            line-height: 32px;
+            margin-bottom: 12px;
+        }
+
+        .news-block-one .inner-box .lower-content p {
+            margin-bottom: 18px;
+        }
+.theme-btn-two {
+    position: relative;
+    display: inline-block;
+    font-size: 14px;
+    color: #222;
+    border: 2px solid #ff7a00;
+    padding: 10px 25px;
+    text-transform: uppercase;
+    font-weight: 600;
+    overflow: hidden;
+    z-index: 1;
+    transition: all 0.4s ease;
+}
+/* BONUS efekt */
+.theme-btn-two {
+    letter-spacing: 1px;
+    transition: all 0.4s ease;
+}
+
+    .theme-btn-two:hover {
+        transform: translateY(-3px); /* yukarı kalkma efekti */
+    }
+.theme-btn-two {
+    text-decoration: none !important;
+}
+
+    .theme-btn-two:hover {
+        text-decoration: none !important;
+    }
+    /* arka plan animasyonu */
+    .theme-btn-two:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 0%;
+        height: 100%;
+        background: #ff7a00;
+        z-index: -1;
+        transition: all 0.4s ease;
+    }
+
+    /* hover efekti */
+    .theme-btn-two:hover:before {
+        width: 100%;
+    }
+
+    .theme-btn-two:hover {
+        color: #fff;
+        border-color: #ff7a00;
+    }
+.news-block-one a {
+    text-decoration: none !important;
+}
+.news-section .auto-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.news-section .row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.news-block {
+    max-width: 350px;
+    width: 100%;
+    margin: 0 15px;
+}
+
+.news-block-one .inner-box {
+    text-align: center;
+}
+    .news-block-one .inner-box .image-box {
+        width: 285.66px;
+        height: 221.14px;
+        margin: 0 auto; /* ORTALAR */
+        overflow: hidden;
+        position: relative;
+    }
+
+        .news-block-one .inner-box .image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+.news-section .sec-title {
+    text-align: center !important;
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    position: relative !important;
+    z-index: 2;
+}
+    .news-section .sec-title p,
+    .news-section .sec-title h2 {
+        display: block !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        color: #222 !important;
+    }

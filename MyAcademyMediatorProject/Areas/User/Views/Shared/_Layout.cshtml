@@ -3,11 +3,10 @@
 <head>
     <meta charset="utf-8">
     <title>Bagery Bakery</title>
-
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <link rel="icon" href="@Url.Content("~/Bagery/assets/images/favicon.ico")">
 
+    <!-- CSS -->
     <link href="@Url.Content("~/Bagery/assets/css/bootstrap.css")" rel="stylesheet">
     <link href="@Url.Content("~/Bagery/assets/css/font-awesome-all.css")" rel="stylesheet">
     <link href="@Url.Content("~/Bagery/assets/css/owl.css")" rel="stylesheet">
@@ -15,174 +14,59 @@
     <link href="@Url.Content("~/Bagery/assets/css/animate.css")" rel="stylesheet">
     <link href="@Url.Content("~/Bagery/assets/css/style.css")" rel="stylesheet">
     <link href="@Url.Content("~/Bagery/assets/css/responsive.css")" rel="stylesheet">
-    <link href="@Url.Content("~/css/navbar.css")" rel="stylesheet"> <!-- Yeni navbar CSS -->
-</head>
+    <link href="@Url.Content("~/navbar/navbar.css")" rel="stylesheet"> <!-- navbar CSS -->
+    <link href="@Url.Content("~/header/header.css")" rel="stylesheet"> <!-- navbar CSS -->
+    <link href="@Url.Content("~/banner/banner.css")" rel="stylesheet"> <!-- banner CSS -->
+    <link href="@Url.Content("~/features/feature.css")" rel="stylesheet"> <!-- feature CSS -->
+    <link href="@Url.Content("~/our-story/our-story.css")" rel="stylesheet"> <!-- our-story CSS -->
+    <link href="@Url.Content("~/shop/shop.css")" rel="stylesheet"> <!-- shop CSS -->
+    <link href="@Url.Content("~/service/service.css")" rel="stylesheet"> <!-- service CSS -->
+    <link href="@Url.Content("~/gallery/gallery.css")" rel="stylesheet"> <!-- gallery CSS -->
+    <link href="@Url.Content("~/promotion/promotion.css")" rel="stylesheet"> <!-- promotion CSS -->
+    <link href="@Url.Content("~/testimonial/testimonial.css")" rel="stylesheet"> <!-- testimonial CSS -->
+    <link href="@Url.Content("~/news/news.css")" rel="stylesheet"> <!-- news CSS -->
+    <link href="@Url.Content("~/contact/contact.css")" rel="stylesheet"> <!-- contact CSS -->
+    <link href="@Url.Content("~/footer/footer.css")" rel="stylesheet"> <!-- footer CSS -->
 
+   
+
+</head>
 <body>
     <div class="boxed_wrapper">
 
-        <!-- preloader -->
+        <!-- Preloader -->
         <div class="preloader"></div>
 
-        <!-- main header -->
-        <header class="main-header style-one">
-
-            <!-- header-top -->
-            <div class="header-top">
-                <div class="auto-container">
-                    <div class="top-inner clearfix">
-
-                        <ul class="info clearfix">
-                            <li>
-                                <i class="fas fa-phone"></i>
-                                <a href="tel:23055873407">+2(305) 587-3407</a>
-                            </li>
-                            <li>
-                                <i class="fas fa-envelope"></i>
-                                <a href="mailto:hallo@example.com">hallo@example.com</a>
-                            </li>
-                        </ul>
-
-                        <ul class="social-links clearfix">
-                            <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
-                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                        </ul>
-
-                    </div>
-                </div>
-            </div>
-            <!-- header-top end -->
-            <!-- header-lower -->
-            <div class="header-lower navbar-fixed-top">
-                <div class="outer-box clearfix">
-                    <div class="logo-box">
-                        <figure class="logo">
-                            <a href="@Url.Action("Index","Home", new {area="User"})">
-                                <img src="@Url.Content("~/Bagery/assets/images/logo.png")" alt="">
-                            </a>
-                        </figure>
-                    </div>
-
-                    <div class="menu-area clearfix">
-
-                        <!-- Mobile Navigation Toggler -->
-                        <div class="mobile-nav-toggler">
-                            <i class="icon-bar"></i>
-                            <i class="icon-bar"></i>
-                            <i class="icon-bar"></i>
-                        </div>
-
-                        <nav class="main-menu navbar-expand-md navbar-light">
-                            <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
-                                <ul class="navigation clearfix">
-                                    <li><a href="#slider">Home</a></li>
-                                    <li><a href="#services">Services</a></li>
-                                    <li><a href="#shop">Shop</a></li>
-                                    <li><a href="#gallery">Gallery</a></li>
-                                    <li><a href="#contact">Contact</a></li>
-                                </ul>
-                            </div>
-                        </nav>
-
-                    </div>
-                </div>
-            </div>
-            <!-- header-lower end -->
-
-        </header>
-        <!-- main-header end -->
-        <!-- page content -->
+        <!-- Header -->
+       
+       
+        <!-- Header End -->
+        <!-- Page Content -->
         @RenderBody()
 
-        <!-- main-footer -->
-        <footer class="main-footer" style="background-image:url(@Url.Content("~/Bagery/assets/images/background/footer-1.jpg"))">
-            <div class="auto-container">
-
-                <div class="subscribe-inner clearfix">
-                    <div class="text pull-left">
-                        <h2>Subscribe Newsletter</h2>
-                    </div>
-                    <div class="form-inner pull-right">
-                        <form method="post">
-                            <div class="form-group">
-                                <input type="email" name="email" placeholder="Your email" required>
-                                <button type="submit" class="theme-btn-one">Subscribe Now</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-
-                <div class="footer-top">
-                    <div class="widget-section">
-                        <div class="row clearfix">
-                            <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
-                                <div class="footer-widget logo-widget">
-                                    <figure class="footer-logo">
-                                        <img src="@Url.Content("~/Bagery/assets/images/footer-logo.png")">
-                                    </figure>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
-                                <div class="footer-widget contact-widget">
-                                    <div class="widget-title">
-                                        <h3>Contact Info</h3>
-                                    </div>
-                                    <ul class="info-list clearfix">
-                                        <li>Flat 20, Reynolds Neck</li>
-                                        <li><a href="mailto:hallo@example.com">hallo@example.com</a></li>
-                                        <li><a href="tel:+23055873407">+2(305) 587-3407</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-lg-2 col-md-6 col-sm-12 footer-column">
-                                <div class="footer-widget links-widget">
-                                    <div class="widget-title">
-                                        <h3>Quick links</h3>
-                                    </div>
-                                    <ul class="links-list clearfix">
-                                        <li><a href="#">Company History</a></li>
-                                        <li><a href="#">About Us</a></li>
-                                        <li><a href="#">Contact Us</a></li>
-                                        <li><a href="#">Services</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 col-sm-12 footer-column">
-                                <div class="footer-widget shediul-widget">
-                                    <div class="widget-title">
-                                        <h3>Opening hours</h3>
-                                    </div>
-                                    <ul class="shediul-list clearfix">
-                                        <li>Monday <span>09 AM - 06PM</span></li>
-                                        <li>Tuesday <span>09 AM - 06PM</span></li>
-                                        <li>Wednesday <span>09 AM - 06PM</span></li>
-                                        <li>Thursday <span>09 AM - 06PM</span></li>
-                                        <li>Friday <span>09 AM - 06PM</span></li>
-                                        <li>Saturday - Sunday <span>Closed</span></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="footer-bottom text-center">
-                <p>&copy; @DateTime.Now.Year Bagery</p>
-            </div>
-
-        </footer>
-
+   
     </div>
 
+    <!-- JS -->
     <script src="@Url.Content("~/Bagery/assets/js/jquery.js")"></script>
     <script src="@Url.Content("~/Bagery/assets/js/popper.min.js")"></script>
     <script src="@Url.Content("~/Bagery/assets/js/bootstrap.min.js")"></script>
+
     <script src="@Url.Content("~/Bagery/assets/js/owl.js")"></script>
     <script src="@Url.Content("~/Bagery/assets/js/wow.js")"></script>
-    <script src="@Url.Content("~/Bagery/assets/js/script.js")"></script>
+    <script src="@Url.Content("~/Bagery/assets/js/jquery.nice-select.min.js")"></script>
 
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-one-page-nav/3.0.0/jquery.nav.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+
+    <!-- 🔥 VALIDATE BURAYA GELMELİ -->
+   
+
+    <script src="@Url.Content("~/Bagery/assets/js/script.js")"></script>
+    <script src="@Url.Content("~/js/banner.js")"></script>
+   
 </body>
 </html>

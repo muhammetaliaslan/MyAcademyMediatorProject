@@ -1,0 +1,73 @@
+﻿
+/* CONTAINER */
+.our-story-centered {
+    position: relative;
+    padding: 100px 0;
+    background: url('/mission-1.jpg') no-repeat center center;
+    background-size: cover;
+    overflow: hidden;
+}
+
+    /* overlay (istersen açık bırak, şuan kapalı) */
+    .our-story-centered::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-color: transparent;
+        z-index: 1;
+    }
+
+    /* CONTENT LAYER */
+    .our-story-centered .content-inner,
+    .our-story-centered .image-box,
+    .our-story-centered .image-overlay-text {
+        position: relative;
+        z-index: 2;
+    }
+
+    /* IMAGE BOX */
+    .our-story-centered .image-box {
+        text-align: center;
+        margin-top: 0px; /* çok abartma */
+    }
+
+/* OVERLAY TEXT */
+.image-overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+}
+
+    /* TEXT STYLES */
+    .image-overlay-text h4 {
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 5px;
+    }
+
+    .image-overlay-text span {
+        font-size: 20px;
+        font-weight: 800;
+    }
+
+    .image-overlay-text h1 {
+        font-weight: 800;
+        font-size: 48px;
+        color: #fff;
+    }
+.our-story-centered {
+    background: #ffffff !important;
+}
+    .our-story-centered h1 {
+        color: #000 !important;
+    }
+    .our-story-centered .content-inner {
+        max-width: 1200px; /* 🔥 sayfa genişliği */
+        margin: 0 auto; /* 🔥 ortalama */
+        padding: 0 20px; /* 🔥 sağ-sol boşluk */
+
+    }

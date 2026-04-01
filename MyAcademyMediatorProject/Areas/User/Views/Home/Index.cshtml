@@ -5,7 +5,64 @@
     Layout = "~/Areas/User/Views/Shared/_Layout.cshtml";
 }
 
+
+<!-- main header -->
+<header class="main-header style-one" data-sync="true">
+
+    <!-- header-lower -->
+    <div class="header-lower" data-sync="true">
+        <div class="outer-box">
+            <div class="logo-box">
+                <figure class="logo"><a href="index.html"><img src="/Bagery/assets/images/logo.png" alt=""></a></figure>
+            </div>
+
+            <div class="menu-area">
+                <div class="mobile-nav-toggler">
+                    <i class="icon-bar"></i>
+                    <i class="icon-bar"></i>
+                    <i class="icon-bar"></i>
+                </div>
+
+                <nav class="main-menu navbar-expand-md navbar-light">
+                    <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
+                        <ul class="navigation scroll-nav clearfix">
+                            <li class="current dropdown">
+                                <a href="index.html">Home</a>
+                                <ul>
+                                    <li><a href="index.html">Ice Cream Shop</a></li>
+                                    <li><a href="index-2.html">Cake Shop</a></li>
+                                    <li><a href="index-3.html">Coffe Shop</a></li>
+                                    <li><a href="index-4.html">Bread Shop</a></li>
+                                    <li><a href="index-onepage.html">OnePage Home</a></li>
+                                    <li><a href="index-rtl.html">RTL Home</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#shop">Shop</a></li>
+                            <li><a href="#service">Services</a></li>
+                            <li><a href="#gallery">Gallery</a></li>
+                            <li><a href="#news">News</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- sticky header -->
+    <div class="sticky-header" data-sync="true">
+        <div class="outer-box">
+            <div class="logo-box">
+                <figure class="logo"><a href="index.html"><img src="assets/images/small-logo.png" alt=""></a></figure>
+            </div>
+        </div>
+    </div>
+
+</header>
+<!-- main-header end -->
 <!-- banner-section -->
+
 <section class="banner-section style-one" id="slider">
     <div class="banner-carousel owl-theme owl-carousel owl-dots-none nav-style-one">
 
@@ -13,7 +70,8 @@
         {
             foreach (var slide in Model.Sliders)
             {
-                <div class="slide-item">
+                <div class="slide-item" data-bg="@slide.BgColor"
+                            data-index="@Model.Sliders.ToList().IndexOf(slide)">
                     <div class="auto-container">
                         <div class="content-inner">
 
@@ -26,9 +84,9 @@
                                 </div>
                             </div>
 
-                            <!-- Sağ taraf: DB'den gelen küçük görsel -->
+                            <!-- Sağ taraf: veritabanından gelen görsel -->
                             <figure class="image-box style-one">
-                                <img src="@Url.Content(slide.ImageUrl)" alt="@slide.Title" class="banner-img">
+                                <img src="@slide.ImageUrl" alt="@slide.Title" class="banner-img" />
                             </figure>
 
                         </div>
@@ -38,11 +96,10 @@
         }
         else
         {
-            <!-- Statik fallback -->
-            <div class="slide-item">
+            <!-- Fallback Slider -->
+            <div class="slide-item" data-bg="#e67e22">
                 <div class="auto-container">
                     <div class="content-inner">
-
                         <div class="content-box">
                             <h1>Lezzetin En Güzel Hali</h1>
                             <p>Günlük taze ürünlerimizle tanışın</p>
@@ -50,11 +107,9 @@
                                 <a href="#" class="banner-btn">Keşfet</a>
                             </div>
                         </div>
-
                         <figure class="image-box style-one">
-                            <img src="~/assets/images/banner/banner-1.jpg" alt="Banner" class="banner-img">
+                            <img src="https://azim.commonsupport.com/Bagery/assets/images/banner/3f5515b1-3341-4ce9-9e07-f8b8dd024f2f.png" alt="Banner" class="banner-img" />
                         </figure>
-
                     </div>
                 </div>
             </div>
@@ -62,18 +117,101 @@
 
     </div>
 </section>
-<!-- banner-section end -->
-<!-- shop-section -->
+<!-- banner-section -->
+<!-- Features Section -->
+<section class="features-section sec-pad">
+    <div class="auto-container">
+        <div class="row clearfix">
+
+            <!-- 01 - Bakery -->
+            <div class="col-lg-4 col-md-6 col-sm-12 feature-block">
+                <div class="feature-box">
+                    <span class="feature-number">01</span>
+                    <h3>Fırın Ürünleri</h3>
+                    <p>Günlük taze fırın ürünlerimizle lezzeti evinize taşıyoruz.</p>
+                </div>
+            </div>
+
+            <!-- 02 - Pasta -->
+            <div class="col-lg-4 col-md-6 col-sm-12 feature-block">
+                <div class="feature-box">
+                    <span class="feature-number">02</span>
+                    <h3>Pasta & Kek</h3>
+                    <p>El yapımı pastalar ve kekler ile tatlı keyfinizi katlayın.</p>
+                </div>
+            </div>
+
+            <!-- 03 - Şekerleme -->
+            <div class="col-lg-4 col-md-6 col-sm-12 feature-block">
+                <div class="feature-box">
+                    <span class="feature-number">03</span>
+                    <h3>Şekerleme</h3>
+                    <p>Özel tariflerle hazırlanan şekerlemelerimizle tatlı anlar yaratın.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- Our Story Centered Section -->
+<section class="our-story-centered sec-pad">
+    <div class="auto-container">
+        <div class="row clearfix align-items-center justify-content-center">
+
+            <!-- Sol Yazı -->
+            <div class="col-lg-3 col-md-12 col-sm-12 left-text">
+                <div class="content-box">
+                    <h3>Bagery Hakkında</h3>
+                    <p>
+                        Pastanemizde, geleneksel lezzetleri modern dokunuşlarla buluşturarak
+                        sizlere her zaman taze ve kaliteli ürünler sunuyoruz. Usta ellerden çıkan pasta, börek ve tatlı çeşitlerimizle
+                        gününüze tat katarken, sıcak ve samimi ortamımızda keyifli anlar yaşamanızı amaçlıyoruz.  </p>
+
+                    
+                </div>
+            </div>
+
+            <!-- Ortadaki Görsel -->
+            <div class="col-lg-6 col-md-12 col-sm-12 image-column">
+                <figure class="image-box">
+
+                    <!-- ORTADAKİ YAZI (YENİ EKLENDİ) -->
+                    <div class="image-overlay-text">
+                        <h1>Geleneksel ve Modern Hizmet</h1>
+                        <h1>1970'ten Beri</h1>
+                    </div>
+
+                    <img src="~/ice-cream-1.png" alt="Our Story" />
+                </figure>
+            </div>
+
+            <!-- Sağ Yazı -->
+            <div class="col-lg-3 col-md-12 col-sm-12 right-text">
+                <div class="content-box">
+                    <h3>Bagery Hakkında Genel Bakış</h3>
+                    <p>
+                        Kalite ve hijyen konusundaki hassasiyetimizle, kullandığımız tüm malzemeleri özenle seçiyor ve üretim sürecimizin her aşamasında
+                        titizlikle çalışıyoruz.
+                    </p>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- Shop Section -->
 <section class="shop-section sec-pad" id="shop">
     <div class="auto-container">
 
         <div class="sec-title centred">
-            <p>Mağaza</p>
-            <h2>Ürünlerimiz</h2>
+            
+            <h1>Ürünlerimiz</h1>
         </div>
 
         <div class="row clearfix">
-
             @if (Model.Products != null && Model.Products.Any())
             {
                 foreach (var product in Model.Products)
@@ -83,7 +221,7 @@
                             <div class="inner-box">
 
                                 <figure class="image-box">
-                                    <img src="@Url.Content(product.ImageUrl)" alt="@product.Name" />
+                                    <img src="@product.ImageUrl" alt="@product.Name" />
                                 </figure>
 
                                 <div class="lower-content">
@@ -103,31 +241,523 @@
             {
                 <p class="text-center">Henüz ürün eklenmemiş.</p>
             }
-
         </div>
 
     </div>
 </section>
-<!-- shop-section end -->
-<!-- Custom Banner CSS -->
-<link rel="stylesheet" href="~/custom-banner.css/custom-banner.css" />
 
-<!-- Owl Carousel JS -->
-<link rel="stylesheet" href="~/Bagery/assets/css/owl.carousel.min.css" />
-<link rel="stylesheet" href="~/Bagery/assets/css/owl.theme.default.min.css" />
-<script src="~/Bagery/assets/js/jquery.js"></script>
-<script src="~/Bagery/assets/js/owl.carousel.min.js"></script>
-<script>
-    $(document).ready(function(){
-        $(".banner-carousel").owlCarousel({
-            items:1,
-            loop:true,
-            nav:true,
-            dots:true,
-            autoplay:true,
-            autoplayTimeout:5000,
-            smartSpeed:800,
-            navText:["<i class='bi bi-chevron-left'></i>","<i class='bi bi-chevron-right'></i>"]
-        });
-    });
-</script>
+<!-- Service Section -->
+<section class="service-section sec-pad centred">
+    <div class="auto-container">
+        <!-- Başlık -->
+        <div class="sec-title">
+            <p>Hizmetlerimiz</p>
+            <h2>Hizmetlerimizde Kalite ve Tutku!</h2>
+        </div>
+
+        <!-- Servis Blokları -->
+        <div class="row clearfix">
+            <!-- Ice Cream -->
+            <div class="col-lg-3 col-md-6 col-sm-12 service-block">
+                <div class="service-block-one">
+                    <div class="inner-box">
+                        <div class="icon-box">
+                            <div class="bg-layer"></div>
+                            <i class="icon-Ice-Cream"></i>
+                        </div>
+                        <div class="lower-content">
+                            <h3><a href="#">Dondurma</a></h3>
+                            <p>En taze ve lezzetli dondurmalarımızla kendinizi şımartın.</p>
+                            <div class="btn-box"><a href="#">Read More</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fresh Bread -->
+            <div class="col-lg-3 col-md-6 col-sm-12 service-block">
+                <div class="service-block-one">
+                    <div class="inner-box">
+                        <div class="icon-box">
+                            <div class="bg-layer"></div>
+                            <i class="icon-Bread"></i>
+                        </div>
+                        <div class="lower-content">
+                            <h3><a href="#">Taze Ekmek</a></h3>
+                            <p>Günlük pişmiş ekmeklerimizle sabahlarınıza tat katın.</p>
+                            <div class="btn-box"><a href="#">Read More</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Piece Cake -->
+            <div class="col-lg-3 col-md-6 col-sm-12 service-block">
+                <div class="service-block-one">
+                    <div class="inner-box">
+                        <div class="icon-box">
+                            <div class="bg-layer"></div>
+                            <i class="icon-Cake"></i>
+                        </div>
+                        <div class="lower-content">
+                            <h3><a href="#">Parça Kek</a></h3>
+                            <p>Lezzetli kek çeşitlerimizle tatlı keyfinizi ikiye katlayın.</p>
+                            <div class="btn-box"><a href="#">Read More</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sweet Donuts -->
+            <div class="col-lg-3 col-md-6 col-sm-12 service-block">
+                <div class="service-block-one">
+                    <div class="inner-box">
+                        <div class="icon-box">
+                            <div class="bg-layer"></div>
+                            <i class="icon-Donuts"></i>
+                        </div>
+                        <div class="lower-content">
+                            <h3><a href="#">Tatlı Donut</a></h3>
+                            <p>Özel tariflerimizle hazırlanan nefis donutlarımızı deneyin.</p>
+                            <div class="btn-box"><a href="#">Read More</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- Photo Gallery Section -->
+<section class="project-section sec-pad" id="gallery">
+    <div class="auto-container">
+        <div class="row clearfix align-items-center">
+
+            <!-- Sol taraf: Başlık ve açıklama -->
+            <div class="col-lg-4 col-md-12 col-sm-12 content-column">
+                <div class="content-box">
+                    <div class="sec-title">
+                        <p>Fotoğraf Galerisi</p>
+                        <h2>Galerimize Göz Atalım</h2>
+                    </div>
+                    <div class="text">
+                        <p>Pastanemizin taptaze ürünlerini ve özel lezzetlerini keşfedin.
+                            Galerimizde her biri özenle hazırlanmış tatlı
+                            ve hamur işleri ile tanışabilirsiniz.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sağ taraf: Gallery görselleri -->
+            <div class="col-lg-8 col-md-12 col-sm-12 gallery-column">
+                <div class="project-carousel owl-carousel owl-theme owl-dots-none nav-style-one">
+                    <div class="project-block-one">
+                        <div class="inner-box">
+                            <figure class="image-box">
+                                <img src="~/gallery-2.jpg" alt="Baking Breads">
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="project-block-one">
+                        <div class="inner-box">
+                            <figure class="image-box">
+                                <img src="~/gallery-3.jpg" alt="Pastries">
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="project-block-one">
+                        <div class="inner-box">
+                            <figure class="image-box">
+                                <img src="~/gallery-4.jpg" alt="Cakes">
+                            </figure>
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+  <!-- Promotion Section -->
+<section class="promotion-section sec-pad" style="background-image: url('/promotion-4.jpg');">
+    <div class="auto-container">
+
+        <div class="sec-title centred">
+            <p>Promosyon</p>
+            <h2>Tüm Lezzetleri Gözden Geçirin <br />Yaz Kampanyası</h2>
+        </div>
+
+        <!-- ÜST BLOK -->
+        <div class="inner-box mb-50 wow slideInRight" data-wow-duration="1500ms">
+
+            <div class="row clearfix">
+
+                <!-- SOL 2 GÖRSEL -->
+                <div class="col-lg-6 col-md-12 col-sm-12 image-column">
+                    <div class="image-box clearfix">
+
+                        <figure class="image">
+                            <img src="/promotion-1.jpg" alt="">
+                        </figure>
+
+                        <figure class="image">
+                            <img src="/promotion-2.jpg" alt="">
+                        </figure>
+
+                    </div>
+                </div>
+
+                <!-- SAĞ YAZI -->
+                <div class="col-lg-6 col-md-12 col-sm-12 content-column">
+                    <div class="content-box">
+
+                        <div class="price-box">
+                            <span>$100</span>
+                            <p>Only</p>
+                        </div>
+
+                        <h3>Herkesin tekrar tekrar gelmek istediği bir lezzet.</h3>
+
+                        <p>Mükemmel tariflerimizle hazırlanmış muhteşem lezzetlerimizle tanışın.</p>
+
+                        <a href="#" class="theme-btn-two">Let’s Order Now</a>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ALT BLOK -->
+        <div class="inner-box wow slideInLeft" data-wow-duration="1500ms">
+
+            <div class="row clearfix">
+
+                <!-- SOL YAZI -->
+                <div class="col-lg-6 col-md-12 col-sm-12 content-column">
+                    <div class="content-box">
+
+                        <div class="price-box">
+                            <span>$100</span>
+                            <p>Only</p>
+                        </div>
+
+                        <h3>Herkesin tekrar tekrar gelmek istediği bir lezzet.</h3>
+
+                        <p>Mükemmel tariflerimizle hazırlanmış muhteşem lezzetlerimizle tanışın.</p>
+
+                        <a href="#" class="theme-btn-two">Let’s Order Now</a>
+
+                    </div>
+                </div>
+
+                <!-- SAĞ TEK GÖRSEL -->
+                <div class="col-lg-6 col-md-12 col-sm-12 image-column">
+                    <div class="image-box">
+
+                        <figure class="image big-img">
+                            <img src="/promotion-3.jpg" alt="">
+                        </figure>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+<!-- testimonial-section -->
+<section class="testimonial-section sec-pad" style="background-image: url(/testimonial-2.jpg);">
+    <figure class="image-layer wow slideInUp animated animated" data-wow-delay="00ms" data-wow-duration="1500ms"><img src="/testimonial-1.png" alt=""></figure>
+    <div class="auto-container">
+        <div class="inner-box">
+            <div class="sec-title">
+                <p>Müşteri Yorumaları</p>
+                <h1>Müşterilerin Bagery Hakkında Söyledikleri..</h1>
+            </div>
+            <div class="single-item-carousel owl-carousel owl-theme owl-dots-none nav-style-one">
+                <div class="testimonial-block-one">
+                    <div class="icon-box" style="background-image: url(/Bagery/assets/images/icons/icon-bg-5.png);">
+                        <i class="icon-Quote"></i>
+                    </div>
+                    <div class="text">
+                        <p>
+                            Siparişler çok hızlı geldi, ürünler de oldukça tazeydi. Özellikle su böreği harikaydı, tekrar sipariş vereceğim.
+                            Uygulama çok kullanışlı, birkaç tıkla sipariş verdim. Pastalar hem lezzetli hem de göründüğü gibiydi.
+                        </p>
+                    </div>
+                    <div class="author-info">
+                        <h4>Selin Aslan</h4>
+                        <span class="designation">Hemşire</span>
+                    </div>
+                </div>
+                <div class="testimonial-block-one">
+                    <div class="icon-box" style="background-image: url(/Bagery/assets/images/icons/icon-bg-5.png);">
+                        <i class="icon-Quote"></i>
+                    </div>
+                    <div class="text">
+                        <p>
+                            Doğum günü pastası sipariş ettim, tam istediğim gibi hazırlanmış. Paketleme de çok özenliydi.
+                            Fiyatlar piyasaya göre uygun ve çeşit çok fazla. Her seferinde yeni bir şey deniyorum.
+                        </p>
+                    </div>
+                    <div class="author-info">
+                        <h4>Ahmet Şahinkaya </h4>
+                        <span class="designation">Yazılımcı</span>
+                    </div>
+                </div>
+                <div class="testimonial-block-one">
+                    <div class="icon-box" style="background-image: url(/Bagery/assets/images/icons/icon-bg-5.png);">
+                        <i class="icon-Quote"></i>
+                    </div>
+                    <div class="text">
+                        <p>
+                            Teslimat biraz geç geldi ama ürün kalitesi bunu unutturdu, özellikle çikolatalı ekler mükemmeldi.
+                            Kahvaltı siparişi verdik, her şey sıcaktı ve tazeydi. Ailecek çok memnun kaldık.
+                        </p>
+                    </div>
+                    <div class="author-info">
+                        <h4> Mete Pala</h4>
+                        <span class="designation">Police</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- news-section -->
+<section class="news-section sec-pad" id="news" style="background-image: url(/news-bg-1.jpg);">
+    <div class="auto-container">
+        <div class="sec-title centred">
+            <p>Takipte Kalın</p>
+            <h2>
+                Daha Fazla Bilgi Edinin
+                <br />Bagery News
+            </h2>
+        </div>
+        <div class="row clearfix">
+            <div class="col-lg-4 col-md-6 col-sm-12 news-block">
+                <div class="news-block-one wow fadeInUp animated animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                    <div class="inner-box">
+                        <figure class="image-box">
+                            <span class="category">Bakery</span>
+                            <a href="blog-details.html"><img src="/news-1.jpg" alt=""></a>
+                        </figure>
+                        <div class="lower-content">
+                            <ul class="post-info clearfix">
+                                <li>on 2 Sep, 2019</li>
+                                <li>/</li>
+                                <li><a href="blog-details.html">Admin</a></li>
+                            </ul>
+                            <h3><a href="blog-details.html">Dondurmanın çevreye etkisi.</a></h3>
+                            <p>Sonuç olarak, öylece durup dururken bir şeyler yapmakla suçlanıyorum.</p>
+                            <div class="btn-box"><a href="blog-details.html" class="theme-btn-two">Devamını Oku</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 news-block">
+                <div class="news-block-one wow fadeInUp animated animated" data-wow-delay="400ms" data-wow-duration="1500ms">
+                    <div class="inner-box">
+                        <figure class="image-box">
+                            <span class="category">Bakery</span>
+                            <a href="blog-details.html"><img src="/news-2.jpg" alt=""></a>
+                        </figure>
+                        <div class="lower-content">
+                            <ul class="post-info clearfix">
+                                <li>on 2 Aug, 2019</li>
+                                <li>/</li>
+                                <li><a href="blog-details.html">by admin</a></li>
+                            </ul>
+                            <h3><a href="blog-details.html">Bagery'deki başarı sırlarını açıklıyoruz..</a></h3>
+                            <p>Sonuç olarak, öylece durup dururken bir şeyler yapmakla suçlanıyorum.</p>
+                            <div class="btn-box"><a href="blog-details.html" class="theme-btn-two">Devamını Oku</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 news-block">
+                <div class="news-block-one wow fadeInUp animated animated" data-wow-delay="600ms" data-wow-duration="1500ms">
+                    <div class="inner-box">
+                        <figure class="image-box">
+                            <span class="category">Bakery</span>
+                            <a href="blog-details.html"><img src="/news-3.jpg" alt=""></a>
+                        </figure>
+                        <div class="lower-content">
+                            <ul class="post-info clearfix">
+                                <li>on 2 Jul, 2019</li>
+                                <li>/</li>
+                                <li><a href="blog-details.html">by admin</a></li>
+                            </ul>
+                            <h3><a href="blog-details.html">İyi yemek sadece anlamına gelmez..</a></h3>
+                            <p>Sonuç olarak, öylece durup dururken bir şeyler yapmakla suçlanıyorum.</p>
+                            <div class="btn-box"><a href="blog-details.html" class="theme-btn-two">Devamını Oku</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- news-section end -->
+<!-- contact-section -->
+<section class="contact-section sec-pad" style="background-image: url(/contact-1.jpg);">
+    <div class="auto-container">
+        <div class="sec-title centred">
+            <p>Bize Ulaşın</p>
+            <h1>İletişime Geçin</h1>
+        </div>
+        <div class="row clearfix">
+            <div class="col-lg-3 col-md-5 col-sm-12 info-column">
+                <div class="contact-info-inner">
+                    <div class="single-box">
+                        <h3>Çalışma Saatleri</h3>
+                        <ul class="list clearfix">
+                            <li>Haftaiçi: 9.30 18.00 </li>
+                            <li>Pazar & Tatiller: Kapalı</li>
+                        </ul>
+                    </div>
+                    <div class="single-box">
+                        <h3>İletişim Bilgileri </h3>
+                        <ul class="list clearfix">
+                            <li>Esentepe, Fatih Sultan Mehmet Blv. No:50, 16200 Ni̇lüfer/Bursa</li>
+                            <li><a href="mailto:bagery@info.com">bagery@info.com</a></li>
+                            <li><a href="tel:5359544565">(554) 451-85-97</a></li>
+                        </ul>
+                    </div>
+                    <div class="single-box">
+                        <h3>Social contact</h3>
+                        <ul class="Sosyal Medya Uzantıları">
+                            <li><a href="index.html"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="index.html"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="index.html"><i class="fab fa-vimeo-v"></i></a></li>
+                            <li><a href="index.html"><i class="fab fa-linkedin-in"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-9 col-md-7 col-sm-12 form-column">
+                <div class="form-inner">
+                    <h3>Kayıt Olmak İçin</h3>
+                    <form method="post" action="sendemail.php" id="contact-form" class="default-form">
+                        <div class="row clearfix">
+                            <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+                                <input type="text" name="username" placeholder="Adınız *" required="">
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+                                <input type="email" name="email" placeholder="Mail Adresiniz *" required="">
+                            </div>
+                            <div class="col-lg-6 col-md-12 col-sm-12 form-group">
+                                <input type="text" name="phone" required="" placeholder="Telefon">
+                            </div>
+                            <div class="col-lg-6 col-md-12 col-sm-12 form-group">
+                                <input type="text" name="subject" required="" placeholder="Konu">
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 form-group">
+                                <textarea name="message" placeholder="Mesajınız ..."></textarea>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 form-group message-btn">
+                                <button class="theme-btn-one" type="submit" name="submit-form">Şimdi Gönder</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- contact-section end -->
+<!-- main-footer -->
+<footer class="main-footer" style="background-image: url(/footer-1.jpg);">
+    <div class="auto-container">
+        <div class="subscribe-inner clearfix">
+            <div class="text pull-left">
+                <h2>Kayıt Olun</h2>
+            </div>
+            <div class="form-inner pull-right">
+                <form action="index.html" method="post" class="subscribe-form">
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Email adresiniz" required="">
+                        <button type="submit" class="theme-btn-one">Kayıt Ol</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="footer-top">
+            <div class="widget-section">
+                <div class="row clearfix">
+                    <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
+                        <div class="footer-widget logo-widget">
+                            <figure class="footer-logo"><a href="index.html"><img src="/assets/images/footer-logo.png" alt=""></a></figure>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
+                        <div class="footer-widget contact-widget">
+                            <div class="widget-title">
+                                <h3>İletişim Bilgileri </h3>
+                            </div>
+                            <div class="widget-content">
+                                <ul class="info-list clearfix">
+                                    <li>Fatih Sultan Mehmet Blv.Ni̇lüfer/Bursa </li>
+                                    <li><a href="mailto:">support@bagery.com</a></li>
+                                    <li><a href="tel:2244462587">+90(535) 385-6542</a></li>
+                                </ul>
+                                <ul class="social-links clearfix">
+                                    <li><a href="index.html"><i class="fab fa-google-plus-g"></i></a></li>
+                                    <li><a href="index.html"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="index.html"><i class="fab fa-twitter"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-6 col-sm-12 footer-column">
+                        <div class="footer-widget links-widget">
+                            <div class="widget-title">
+                                <h3>Hızlı Bağlantılar</h3>
+                            </div>
+                            <div class="widget-content">
+                                <ul class="links-list clearfix">
+                                    <li><a href="index.html"><i class="fas fa-angle-right"></i>Şirket Geçmişi</a></li>
+                                    <li><a href="index.html"><i class="fas fa-angle-right"></i>Hakkımızda</a></li>
+                                    <li><a href="index.html"><i class="fas fa-angle-right"></i>Bize Ulaşın</a></li>
+                                    <li><a href="index.html"><i class="fas fa-angle-right"></i>Servisler</a></li>
+                                    <li><a href="index.html"><i class="fas fa-angle-right"></i>Gizlilik Politikası</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12 footer-column">
+                        <div class="footer-widget shediul-widget">
+                            <div class="border-shape" style="background-image: url(/Bagery/assets/images/shape/shape-4.png);"></div>
+                            <div class="widget-title">
+                                <h3>Çalışma Saatleri</h3>
+                            </div>
+                            <div class="widget-content">
+                                <ul class="shediul-list clearfix">
+                                    <li>Pazartesi: <span>09:00 - 18:00</span></li>
+                                    <li>Salı: <span>09:00 - 18:00</span></li>
+                                    <li>Çarşamba: <span>09:00 - 18:00</span></li>
+                                    <li>Perşembe: <span>09:00 - 18:00</span></li>
+                                    <li>Cuma: <span>09:00 - 18:00</span></li>
+                                    <li>Cumartesi - Pazar: <span>Kapalı</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="auto-container clearfix">
+            <div class="copyright pull-left">
+                <p><a href="index.html">Bagery</a> &copy; 2020 All Right Reserved</p>
+            </div>
+           
+            
+        </div>
+    </div>
+</footer>
+<!-- main-footer end -->

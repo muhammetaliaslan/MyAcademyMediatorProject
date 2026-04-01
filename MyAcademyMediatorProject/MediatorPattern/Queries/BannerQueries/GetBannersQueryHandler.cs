@@ -22,7 +22,11 @@ namespace MyAcademyMediatorProject.MediatorPattern.Queries.Banner
         public async Task<List<BannerEntity>> Handle(GetBannersQuery request, CancellationToken cancellationToken)
         {
             var banners = await _repository.GetAllAsync(); // PARAMETRESİZ!
-            return banners.Where(b => b.IsActive).ToList(); // BURADA filtre
+            return banners
+     .Where(b => b.IsActive)
+     .OrderBy(b => b.OrderNo)
+     .ThenBy(b => b.Id)
+     .ToList();
         }
     }
 }

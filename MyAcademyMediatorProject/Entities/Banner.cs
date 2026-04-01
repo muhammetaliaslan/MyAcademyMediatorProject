@@ -3,9 +3,16 @@
     public class Banner
     {
         public int Id { get; set; }
-        public string Title { get; set; }       // Başlık
-        public string Subtitle { get; set; }    // Alt başlık
-        public string ImageUrl { get; set; }    // Görsel yolu
-        public bool IsActive { get; set; }      // Aktif/pasif
+
+        public string Title { get; set; }
+        public string Subtitle { get; set; }
+
+        public string ImageUrl { get; set; }
+
+        public string BgColor { get; set; } = "#FFA500";
+
+        public int OrderNo { get; set; }
+
+        public bool IsActive { get; set; }
     }
 }

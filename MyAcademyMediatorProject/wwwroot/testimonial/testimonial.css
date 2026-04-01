@@ -1,0 +1,108 @@
+﻿
+/** testimonial-section **/
+
+.testimonial-section {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 900px;
+}
+
+    .testimonial-section:before {
+        position: absolute;
+        content: '';
+        width: 650px;
+        height: 100%;
+        top: 0px;
+        right: 0px;
+        background: #f39c12; /* TURUNCU RENK */
+        opacity: 0.95;
+        z-index: 0;
+    }
+
+    .testimonial-section .image-layer {
+        position: absolute;
+        right: 295px;
+        bottom: -16px;
+    }
+
+    /* Testimonial içerik kutusu */
+    .testimonial-section .inner-box {
+        position: relative;
+        display: block;
+        max-width: 510px; /* Kutunun maksimum genişliği (yazı çok uzamasın diye) */
+        width: 100%;
+        /* ============================= */
+        /* MANUEL KONUM AYARLARI (sen değiştirirsin) */
+        /* ============================= */
+
+        margin-top: 200px; /* Yukarı-aşağı boşluk (pozitif: aşağı indirir) */
+        margin-left: 430px; /* Sağa/sola kaydırma (pozitif: sağa gider) */
+
+        padding-top: 0px; /* İçeriden üst boşluk */
+        padding-bottom: 0px; /* İçeriden alt boşluk */
+    }
+
+.testimonial-block-one .icon-box {
+    position: relative;
+    display: inline-block;
+    width: 114px;
+    height: 116px;
+    line-height: 116px;
+    text-align: center;
+    font-size: 30px;
+    color: #fff;
+    margin-bottom: 28px;
+}
+
+.testimonial-block-one .text {
+    position: relative;
+    margin-bottom: 24px;
+}
+
+    .testimonial-block-one .text p {
+        font-size: 20px;
+        line-height: 34px;
+        color: #222;
+        font-weight: 500;
+    }
+
+.testimonial-block-one .author-info h4 {
+    font-size: 20px;
+    line-height: 28px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 500;
+    margin-bottom: 7px;
+}
+
+.testimonial-block-one .author-info .designation {
+    position: relative;
+    display: block;
+    font-size: 16px;
+    line-height: 26px;
+    color: #222;
+    margin: 0px;
+}
+
+.testimonial-section .owl-nav {
+    position: relative;
+    display: block;
+    margin-top: 35px;
+}
+
+.testimonial-section .nav-style-one .owl-nav .owl-prev {
+    margin-right: 10px;
+}
+
+    .testimonial-section .nav-style-one .owl-nav .owl-prev:hover,
+    .testimonial-section .nav-style-one .owl-nav .owl-next:hover {
+    }
+.testimonial-block-one .text p {
+    color: #555;
+    font-size: 16px;
+    line-height: 30px;
+}

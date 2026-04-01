@@ -1,0 +1,121 @@
+﻿/* ================= PROMOTION FINAL ================= */
+
+.promotion-section {
+    position: relative;
+    width: 100%;
+    padding: 100px 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    z-index: 1;
+}
+
+    /* ARKA PLAN */
+    .promotion-section::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: #fff;
+        opacity: 0.87;
+        z-index: -1;
+    }
+
+    /* BAŞLIK */
+    .promotion-section .sec-title {
+        text-align: center;
+        margin-bottom: 60px;
+    }
+
+    /* CONTAINER ORTALAMA */
+    .promotion-section .auto-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    /* ROW FIX (EN KRİTİK) */
+    .promotion-section .row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* INNER BOX */
+    .promotion-section .inner-box {
+        display: flex;
+        align-items: center;
+        gap: 40px; /* 🔥 DÜZELTİLDİ */
+    }
+
+    /* COL RESET */
+    .promotion-section [class*="col-"] {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    /* IMAGE BOX */
+    .promotion-section .image-box {
+        display: flex;
+        overflow: hidden;
+    }
+
+        /* IMAGE */
+        .promotion-section .image-box .image img {
+            width: 256px;
+            height: 392px;
+            object-fit: cover;
+        }
+
+        .promotion-section .image-box .big-img img {
+            width: 523px;
+            height: 392px;
+            object-fit: cover;
+        }
+
+        .promotion-section .image-box .image:first-child {
+            margin-right: 10px;
+        }
+
+    /* CONTENT */
+    .promotion-section .content-box {
+        background: #fff;
+        padding: 40px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    }
+
+    /* PRICE */
+    .promotion-section .price-box {
+        width: 89px;
+        height: 90px;
+        text-align: center;
+        margin-bottom: 20px;
+        background-image: url('/images/icons/icon-bg-4.png');
+        background-size: cover;
+        background-position: center;
+        padding-top: 25px;
+    }
+
+    /* TEXT */
+    .promotion-section h3 {
+        font-size: 26px;
+        font-weight: 700;
+        margin-bottom: 15px;
+    }
+
+    .promotion-section p {
+        margin-bottom: 20px;
+    }
+
+    /* BUTTON */
+    .promotion-section .theme-btn-two {
+        display: inline-block;
+        padding: 12px 35px;
+        background: #000;
+        color: #fff;
+        transition: 0.3s;
+    }
+
+        .promotion-section .theme-btn-two:hover {
+            background: #FFA500;
+        }

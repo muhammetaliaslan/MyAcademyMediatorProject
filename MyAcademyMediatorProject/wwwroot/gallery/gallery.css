@@ -1,0 +1,167 @@
+﻿/* ---------------- GALLERY SECTION ---------------- */
+.project-section {
+    padding: 100px 0;
+    background-image: url('/gallery-1.jpg'); /* wwwroot içindeki arkaplan görseli */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+    /* ROW VE FLEX AYARLARI */
+    .project-section .row.clearfix {
+        display: flex;
+        align-items: center; /* tüm içerik dikey ortalanır */
+        justify-content: flex-start;
+    }
+
+    /* SOLDAN YAZIYI ORTALA VE YAKLAŞTIR */
+    .project-section .content-column {
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* dikey ortala */
+        height: 398px; /* görsel yüksekliği ile eşle */
+        text-align: left;
+        padding-right: 10px; /* görsele biraz daha yakın olsun */
+    }
+
+        /* SOLDAN YAZI - BAŞLIK VE METİN */
+        .project-section .content-column .sec-title p {
+            font-size: 16px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .project-section .content-column .sec-title h2 {
+            font-size: 36px;
+            font-weight: 800;
+            color: #333;
+            line-height: 1.2;
+        }
+
+        .project-section .content-column .text p {
+            font-size: 14px;
+            color: #555;
+            margin-top: 15px;
+        }
+
+/* TAB BUTTONS */
+.project-tab-btns {
+    margin-bottom: 30px;
+    list-style: none;
+    padding: 0;
+    text-align: right;
+}
+
+    .project-tab-btns li {
+        display: inline-block;
+        margin-left: 10px;
+        margin-bottom: 10px;
+        padding: 8px 20px;
+        background: rgba(255,255,255,0.8);
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: 600;
+        color: #333;
+        transition: all 0.3s ease;
+    }
+
+        .project-tab-btns li.active-btn {
+            background: #FFA500;
+            color: #fff;
+        }
+
+/* PROJECT CAROUSEL - GÖRSELLER */
+.project-section .porject-column .project-block-one {
+    margin-right: 10px; /* görsel arası boşluk azaltıldı */
+    width: 285px; /* sabit genişlik */
+    height: 398px; /* sabit yükseklik */
+    flex: 0 0 auto;
+    overflow: hidden;
+    border-radius: 10px;
+    position: relative;
+}
+
+.project-section .project-block-one:last-child {
+    margin-right: 0; /* son görselde boşluk olmasın */
+}
+
+.project-section .project-block-one {
+    width: 285px;
+    height: 398px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    .project-section .project-block-one img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* 🔥 BOYUTU KORUR + DOLDURUR */
+        object-position: center;
+        display: block;
+    }
+
+/* LOWER CONTENT / OVERLAY */
+.project-section .project-block-one .lower-content {
+    padding: 10px;
+    background: rgba(0,0,0,0.6);
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+    .project-section .project-block-one .lower-content h3 {
+        font-size: 16px;
+        font-weight: 700;
+        margin: 0;
+    }
+
+.project-section .project-block-one .view-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 5;
+}
+
+    .project-section .project-block-one .view-btn a {
+        color: #fff;
+        font-size: 18px;
+    }
+
+/* RESPONSIVE */
+@media (max-width: 1200px) {
+    .project-section .content-column {
+        margin-bottom: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .project-section .row.clearfix {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-section .content-column {
+        text-align: center;
+        margin-bottom: 30px;
+        padding-right: 0; /* mobilde ortala */
+    }
+
+    .project-tab-btns {
+        text-align: center;
+    }
+
+    .project-section .project-block-one {
+        width: 100%;
+        height: auto;
+    }
+
+        .project-section .project-block-one img {
+            height: auto;
+        }
+}

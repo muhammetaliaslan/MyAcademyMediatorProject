@@ -1,0 +1,152 @@
+﻿
+/* ================= SAFE BANNER (SADECE SLIDER ETKİLENİR) ================= */
+
+.banner-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: #0b0b0b;
+}
+
+    /* overlay */
+    .banner-section::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient( 90deg, rgba(0,0,0,0.35), rgba(0,0,0,0.30), rgba(0,0,0,0.15) );
+        z-index: 1;
+    }
+
+    /* ONLY BANNER OWL */
+    .banner-section .banner-carousel,
+    .banner-section .owl-stage-outer,
+    .banner-section .owl-stage,
+    .banner-section .owl-item {
+        height: 100vh;
+    }
+
+    /* slide */
+    .banner-section .slide-item {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+    }
+
+    /* container */
+    .banner-section .auto-container {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+    }
+
+    /* layout */
+    .banner-section .content-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 60px;
+    }
+
+    /* LEFT TEXT */
+    .banner-section .content-box {
+        flex: 1;
+        color: #fff;
+        max-width: 500px;
+    }
+
+        .banner-section .content-box h1 {
+            font-size: 72px;
+            font-weight: 900;
+            line-height: 1.05;
+            margin-bottom: 25px;
+        }
+
+        .banner-section .content-box p {
+            font-size: 20px;
+            opacity: 0.85;
+            margin-bottom: 35px;
+        }
+
+    /* BUTTON */
+    .banner-section .banner-btn {
+        display: inline-block;
+        padding: 15px 40px;
+        background: #ff7a00;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 8px;
+    }
+
+    /* RIGHT IMAGE */
+    .banner-section .image-box {
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+    }
+
+    /* IMAGE */
+    .banner-section .banner-img {
+        width: 100%;
+        max-width: 1150px;
+        height: auto;
+        display: block;
+        filter: drop-shadow(0px 20px 40px rgba(0,0,0,0.5));
+        animation: bannerFloat 5s ease-in-out infinite;
+    }
+
+/* FLOAT (SADECE BANNER) */
+@keyframes bannerFloat {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-4px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* RESPONSIVE */
+@media (max-width: 1200px) {
+    .banner-section .content-inner {
+        padding: 0 30px;
+    }
+
+    .banner-section .banner-img {
+        max-width: 600px;
+    }
+
+    .banner-section .content-box h1 {
+        font-size: 56px;
+    }
+}
+
+@media (max-width: 992px) {
+    .banner-section .content-inner {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .banner-section .image-box {
+        justify-content: center;
+    }
+
+    .banner-section .banner-img {
+        max-width: 420px;
+    }
+
+    .banner-section .content-box h1 {
+        font-size: 40px;
+    }
+}
+.banner-section .banner-img {
+    transform: translateX(280px) translateY(67px) !important;
+}

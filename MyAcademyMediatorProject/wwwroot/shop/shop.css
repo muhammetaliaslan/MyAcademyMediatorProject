@@ -1,0 +1,30 @@
+﻿/* Shop Section Arka Plan */
+#shop {
+    position: relative;
+    background-image: url('/shop-11.jpg'); /* wwroot içindeki görselin yolu */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 100px 0; /* yukarı-aşağı boşluk */
+    z-index: 1;
+}
+
+    /* Üzerine saydam katman ekleyelim (ürünler öne çıksın) */
+    #shop::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.3); /* %30 siyah saydamlık */
+        z-index: 0;
+    }
+
+    /* İçerik (başlık ve ürünler) saydam katmanın üstünde kalsın */
+    #shop .auto-container,
+    #shop .sec-title,
+    #shop .row {
+        position: relative;
+        z-index: 1;
+    }
